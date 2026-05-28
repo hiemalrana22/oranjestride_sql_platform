@@ -1,0 +1,54 @@
+{
+  "id": 10,
+  "day": 9,
+  "title": "Priority Constituencies by State",
+  "topic": "Three-table JOIN + GROUP BY",
+  "description": "Write a query joining all three tables (constituency_info, election_results, voter_turnout) to find constituencies where winning_margin < 50000 AND turnout_percent < 65. Then group by state and count them as priority_constituencies.",
+  "starterQuery": "SELECT * FROM constituency_info;",
+  "testCases": [
+    {
+      "schema": [
+        "CREATE TABLE constituency_info (constituency_id INTEGER, constituency TEXT, state TEXT)",
+        "CREATE TABLE election_results (constituency_id INTEGER, candidate TEXT, party TEXT, total_votes INTEGER, winning_margin INTEGER)",
+        "CREATE TABLE voter_turnout (constituency_id INTEGER, turnout_percent REAL)"
+      ],
+      "seed": [
+        "INSERT INTO constituency_info VALUES (1,'Ichapuram','Andhra Pradesh')",
+        "INSERT INTO constituency_info VALUES (2,'Sompeta','Andhra Pradesh')",
+        "INSERT INTO constituency_info VALUES (3,'Tekkali','Andhra Pradesh')",
+        "INSERT INTO constituency_info VALUES (4,'Nagpur','Maharashtra')",
+        "INSERT INTO constituency_info VALUES (5,'Pune','Maharashtra')",
+        "INSERT INTO election_results VALUES (1,'Candidate A','BJP',83247,40000)",
+        "INSERT INTO election_results VALUES (2,'Candidate B','INC',91272,28000)",
+        "INSERT INTO election_results VALUES (3,'Candidate C','TMC',90959,65000)",
+        "INSERT INTO election_results VALUES (4,'Candidate D','AAP',88000,30000)",
+        "INSERT INTO election_results VALUES (5,'Candidate E','NCP',95000,70000)",
+        "INSERT INTO voter_turnout VALUES (1,60.0)",
+        "INSERT INTO voter_turnout VALUES (2,63.5)",
+        "INSERT INTO voter_turnout VALUES (3,70.0)",
+        "INSERT INTO voter_turnout VALUES (4,58.0)",
+        "INSERT INTO voter_turnout VALUES (5,66.0)"
+      ],
+      "solutionQuery": "SELECT c.state, COUNT(*) AS priority_constituencies FROM constituency_info c INNER JOIN election_results e ON c.constituency_id = e.constituency_id INNER JOIN voter_turnout t ON c.constituency_id = t.constituency_id WHERE e.winning_margin < 50000 AND t.turnout_percent < 65 GROUP BY c.state"
+    },
+    {
+      "schema": [
+        "CREATE TABLE constituency_info (constituency_id INTEGER, constituency TEXT, state TEXT)",
+        "CREATE TABLE election_results (constituency_id INTEGER, candidate TEXT, party TEXT, total_votes INTEGER, winning_margin INTEGER)",
+        "CREATE TABLE voter_turnout (constituency_id INTEGER, turnout_percent REAL)"
+      ],
+      "seed": [
+        "INSERT INTO constituency_info VALUES (1,'Kanpur','Uttar Pradesh')",
+        "INSERT INTO constituency_info VALUES (2,'Lucknow','Uttar Pradesh')",
+        "INSERT INTO constituency_info VALUES (3,'Varanasi','Uttar Pradesh')",
+        "INSERT INTO election_results VALUES (1,'Raj A','BJP',100000,20000)",
+        "INSERT INTO election_results VALUES (2,'Priya B','SP',110000,45000)",
+        "INSERT INTO election_results VALUES (3,'Anil C','BSP',90000,80000)",
+        "INSERT INTO voter_turnout VALUES (1,55.0)",
+        "INSERT INTO voter_turnout VALUES (2,62.0)",
+        "INSERT INTO voter_turnout VALUES (3,68.0)"
+      ],
+      "solutionQuery": "SELECT c.state, COUNT(*) AS priority_constituencies FROM constituency_info c INNER JOIN election_results e ON c.constituency_id = e.constituency_id INNER JOIN voter_turnout t ON c.constituency_id = t.constituency_id WHERE e.winning_margin < 50000 AND t.turnout_percent < 65 GROUP BY c.state"
+    }
+  ]
+}

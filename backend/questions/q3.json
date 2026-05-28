@@ -1,0 +1,40 @@
+{
+  "id": 3,
+  "day": 8,
+  "title": "Sort Contacts by Party and Name",
+  "topic": "ORDER BY (multi-column)",
+  "description": "Write a query to retrieve all columns from book1, sorted by Party_Name in descending order. Where two contacts share the same party, sort them by Contact_Name in ascending order.",
+  "starterQuery": "SELECT * FROM book1;",
+  "testCases": [
+    {
+      "schema": [
+        "CREATE TABLE book1 (sno INTEGER, Party_Name TEXT, Contact_Name TEXT, Address TEXT)"
+      ],
+      "seed": [
+        "INSERT INTO book1 VALUES (1,'BJP','Ram','New Delhi')",
+        "INSERT INTO book1 VALUES (2,'INC','Shyam','Mumbai')",
+        "INSERT INTO book1 VALUES (3,'TMC','Kevin','Chennai')",
+        "INSERT INTO book1 VALUES (4,'SP','Abhishek','Kolkata')",
+        "INSERT INTO book1 VALUES (5,'AAP','Rohan','Surat')",
+        "INSERT INTO book1 VALUES (6,'AIADMK','Varunn','Chandigarh')",
+        "INSERT INTO book1 VALUES (7,'BJP','Amit','Pune')",
+        "INSERT INTO book1 VALUES (8,'INC','Sumit','Hyderabad')",
+        "INSERT INTO book1 VALUES (9,'AIADMK','Sushma','Kanyakumari')",
+        "INSERT INTO book1 VALUES (10,'AAP','Samarjeet','Amritsar')"
+      ],
+      "solutionQuery": "SELECT * FROM book1 ORDER BY Party_Name DESC, Contact_Name ASC"
+    },
+    {
+      "schema": [
+        "CREATE TABLE book1 (sno INTEGER, Party_Name TEXT, Contact_Name TEXT, Address TEXT)"
+      ],
+      "seed": [
+        "INSERT INTO book1 VALUES (1,'BJP','Zara','Delhi')",
+        "INSERT INTO book1 VALUES (2,'BJP','Amit','Mumbai')",
+        "INSERT INTO book1 VALUES (3,'INC','Priya','Chennai')",
+        "INSERT INTO book1 VALUES (4,'AAP','Rahul','Pune')"
+      ],
+      "solutionQuery": "SELECT * FROM book1 ORDER BY Party_Name DESC, Contact_Name ASC"
+    }
+  ]
+}

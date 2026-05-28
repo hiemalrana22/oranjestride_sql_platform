@@ -1,0 +1,40 @@
+{
+  "id": 1,
+  "day": 8,
+  "title": "Select All Party Contacts",
+  "topic": "Basic SELECT",
+  "description": "Write a query to retrieve all columns from the book1 table (party contact list), ordered by Party_Name alphabetically.",
+  "starterQuery": "SELECT * FROM book1;",
+  "testCases": [
+    {
+      "schema": [
+        "CREATE TABLE book1 (sno INTEGER, Party_Name TEXT, Contact_Name TEXT, Address TEXT)"
+      ],
+      "seed": [
+        "INSERT INTO book1 VALUES (1,'AAP','Rohan','Surat')",
+        "INSERT INTO book1 VALUES (2,'AIADMK','Varunn','Chandigarh')",
+        "INSERT INTO book1 VALUES (3,'AIADMK','Sushma','Kanyakumari')",
+        "INSERT INTO book1 VALUES (4,'BJP','Ram','New Delhi')",
+        "INSERT INTO book1 VALUES (5,'BJP','Amit','Pune')",
+        "INSERT INTO book1 VALUES (6,'INC','Shyam','Mumbai')",
+        "INSERT INTO book1 VALUES (7,'INC','Sumit','Hyderabad')",
+        "INSERT INTO book1 VALUES (8,'SP','Abhishek','Kolkata')",
+        "INSERT INTO book1 VALUES (9,'TMC','Kevin','Chennai')",
+        "INSERT INTO book1 VALUES (10,'AAP','Samarjeet','Amritsar')"
+      ],
+      "solutionQuery": "SELECT * FROM book1 ORDER BY Party_Name"
+    },
+    {
+      "schema": [
+        "CREATE TABLE book1 (sno INTEGER, Party_Name TEXT, Contact_Name TEXT, Address TEXT)"
+      ],
+      "seed": [
+        "INSERT INTO book1 VALUES (1,'BJP','Ravi','Delhi')",
+        "INSERT INTO book1 VALUES (2,'INC','Priya','Chennai')",
+        "INSERT INTO book1 VALUES (3,'AAP','Ajay','Pune')",
+        "INSERT INTO book1 VALUES (4,'TMC','Nisha','Kolkata')"
+      ],
+      "solutionQuery": "SELECT * FROM book1 ORDER BY Party_Name"
+    }
+  ]
+}

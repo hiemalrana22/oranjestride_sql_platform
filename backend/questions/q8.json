@@ -1,0 +1,40 @@
+{
+  "id": 8,
+  "day": 9,
+  "title": "Constituencies and Voter Turnout (LEFT JOIN)",
+  "topic": "LEFT JOIN",
+  "description": "Write a query using a LEFT JOIN to get every constituency from constituency_info along with its turnout_percent from voter_turnout (if available). Return constituency, state, and turnout_percent.",
+  "starterQuery": "SELECT * FROM constituency_info;",
+  "testCases": [
+    {
+      "schema": [
+        "CREATE TABLE constituency_info (constituency_id INTEGER, constituency TEXT, state TEXT)",
+        "CREATE TABLE voter_turnout (constituency_id INTEGER, turnout_percent REAL)"
+      ],
+      "seed": [
+        "INSERT INTO constituency_info VALUES (1,'Ichapuram','Andhra Pradesh')",
+        "INSERT INTO constituency_info VALUES (2,'Sompeta','Andhra Pradesh')",
+        "INSERT INTO constituency_info VALUES (3,'Tekkali','Andhra Pradesh')",
+        "INSERT INTO constituency_info VALUES (4,'Palasa','Andhra Pradesh')",
+        "INSERT INTO voter_turnout VALUES (1,72.5)",
+        "INSERT INTO voter_turnout VALUES (2,68.3)",
+        "INSERT INTO voter_turnout VALUES (3,55.1)"
+      ],
+      "solutionQuery": "SELECT c.constituency, c.state, t.turnout_percent FROM constituency_info c LEFT JOIN voter_turnout t ON c.constituency_id = t.constituency_id"
+    },
+    {
+      "schema": [
+        "CREATE TABLE constituency_info (constituency_id INTEGER, constituency TEXT, state TEXT)",
+        "CREATE TABLE voter_turnout (constituency_id INTEGER, turnout_percent REAL)"
+      ],
+      "seed": [
+        "INSERT INTO constituency_info VALUES (1,'Mumbai North','Maharashtra')",
+        "INSERT INTO constituency_info VALUES (2,'Pune','Maharashtra')",
+        "INSERT INTO constituency_info VALUES (3,'Nagpur','Maharashtra')",
+        "INSERT INTO voter_turnout VALUES (1,65.0)",
+        "INSERT INTO voter_turnout VALUES (3,71.2)"
+      ],
+      "solutionQuery": "SELECT c.constituency, c.state, t.turnout_percent FROM constituency_info c LEFT JOIN voter_turnout t ON c.constituency_id = t.constituency_id"
+    }
+  ]
+}

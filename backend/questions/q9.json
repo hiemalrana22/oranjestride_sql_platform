@@ -1,0 +1,42 @@
+{
+  "id": 9,
+  "day": 9,
+  "title": "Constituencies with Close Election Margins",
+  "topic": "INNER JOIN + WHERE filter",
+  "description": "Write a query to join constituency_info and election_results, then filter for constituencies where winning_margin is less than 50000. Return constituency, state, party, and winning_margin.",
+  "starterQuery": "SELECT * FROM constituency_info;",
+  "testCases": [
+    {
+      "schema": [
+        "CREATE TABLE constituency_info (constituency_id INTEGER, constituency TEXT, state TEXT)",
+        "CREATE TABLE election_results (constituency_id INTEGER, candidate TEXT, party TEXT, total_votes INTEGER, winning_margin INTEGER)"
+      ],
+      "seed": [
+        "INSERT INTO constituency_info VALUES (1,'Ichapuram','Andhra Pradesh')",
+        "INSERT INTO constituency_info VALUES (2,'Sompeta','Andhra Pradesh')",
+        "INSERT INTO constituency_info VALUES (3,'Tekkali','Andhra Pradesh')",
+        "INSERT INTO constituency_info VALUES (4,'Palasa','Andhra Pradesh')",
+        "INSERT INTO election_results VALUES (1,'Candidate A','BJP',83247,45000)",
+        "INSERT INTO election_results VALUES (2,'Candidate B','INC',91272,28000)",
+        "INSERT INTO election_results VALUES (3,'Candidate C','TMC',90959,65000)",
+        "INSERT INTO election_results VALUES (4,'Candidate D','AAP',78000,12000)"
+      ],
+      "solutionQuery": "SELECT c.constituency, c.state, e.party, e.winning_margin FROM constituency_info c INNER JOIN election_results e ON c.constituency_id = e.constituency_id WHERE e.winning_margin < 50000"
+    },
+    {
+      "schema": [
+        "CREATE TABLE constituency_info (constituency_id INTEGER, constituency TEXT, state TEXT)",
+        "CREATE TABLE election_results (constituency_id INTEGER, candidate TEXT, party TEXT, total_votes INTEGER, winning_margin INTEGER)"
+      ],
+      "seed": [
+        "INSERT INTO constituency_info VALUES (1,'Mumbai North','Maharashtra')",
+        "INSERT INTO constituency_info VALUES (2,'Pune','Maharashtra')",
+        "INSERT INTO constituency_info VALUES (3,'Nagpur','Maharashtra')",
+        "INSERT INTO election_results VALUES (1,'Raj Sharma','BJP',120000,85000)",
+        "INSERT INTO election_results VALUES (2,'Priya Patel','INC',95000,12000)",
+        "INSERT INTO election_results VALUES (3,'Anil Kumar','NCP',88000,38000)"
+      ],
+      "solutionQuery": "SELECT c.constituency, c.state, e.party, e.winning_margin FROM constituency_info c INNER JOIN election_results e ON c.constituency_id = e.constituency_id WHERE e.winning_margin < 50000"
+    }
+  ]
+}

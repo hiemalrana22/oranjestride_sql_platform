@@ -1,0 +1,38 @@
+{
+  "id": 14,
+  "day": 10,
+  "title": "Under-Utilized Schemes (Subquery)",
+  "topic": "Subquery + HAVING",
+  "description": "Write a query to find schemes where the average utilized_budget_cr is below the overall average utilized_budget_cr across all schemes. Return year, scheme_name, state_code, and utilized_budget_cr. Use a subquery inside a WHERE clause with IN and HAVING.",
+  "starterQuery": "SELECT * FROM scheme_budget_utilization;",
+  "testCases": [
+    {
+      "schema": [
+        "CREATE TABLE scheme_budget_utilization (scheme_id TEXT, scheme_name TEXT, state_code TEXT, year INTEGER, allocated_budget_cr REAL, utilized_budget_cr REAL)"
+      ],
+      "seed": [
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH01','PM Awas Yojana','MH',2020,2035.2,1828.7)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH01','PM Awas Yojana','UP',2020,1800.0,1200.0)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH02','Jal Jeevan Mission','MH',2020,1180.6,1096.1)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH02','Jal Jeevan Mission','UP',2020,1100.0,980.0)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH03','State Skill Program','MH',2020,5289.3,4852.9)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH03','State Skill Program','KA',2020,4800.0,4400.0)"
+      ],
+      "solutionQuery": "SELECT year, scheme_name, state_code, utilized_budget_cr FROM scheme_budget_utilization WHERE scheme_name IN (SELECT scheme_name FROM scheme_budget_utilization GROUP BY scheme_name HAVING AVG(utilized_budget_cr) < (SELECT AVG(utilized_budget_cr) FROM scheme_budget_utilization))"
+    },
+    {
+      "schema": [
+        "CREATE TABLE scheme_budget_utilization (scheme_id TEXT, scheme_name TEXT, state_code TEXT, year INTEGER, allocated_budget_cr REAL, utilized_budget_cr REAL)"
+      ],
+      "seed": [
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH04','Old Age Pension','MH',2021,933.3,834.7)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH04','Old Age Pension','RJ',2021,800.0,500.0)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH05','National Health Mission','MH',2021,4021.3,3660.5)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH05','National Health Mission','UP',2021,3800.0,3500.0)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH06','Jal Jeevan Mission','GJ',2021,3961.1,3760.8)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH06','Jal Jeevan Mission','KA',2021,3500.0,3300.0)"
+      ],
+      "solutionQuery": "SELECT year, scheme_name, state_code, utilized_budget_cr FROM scheme_budget_utilization WHERE scheme_name IN (SELECT scheme_name FROM scheme_budget_utilization GROUP BY scheme_name HAVING AVG(utilized_budget_cr) < (SELECT AVG(utilized_budget_cr) FROM scheme_budget_utilization))"
+    }
+  ]
+}

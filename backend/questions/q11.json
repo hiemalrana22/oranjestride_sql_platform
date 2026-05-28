@@ -1,0 +1,38 @@
+{
+  "id": 11,
+  "day": 10,
+  "title": "High-Performing District Schemes",
+  "topic": "JOIN + WHERE (multi-condition)",
+  "description": "Write a query joining scheme_budget_utilization and district_policy_outcomes on state_code. Return scheme_name as Scheme, district_name as District, health_index as HealthIndex, and education_index as EduIndex — but only where education_index > 61 AND health_index > 61.",
+  "starterQuery": "SELECT * FROM scheme_budget_utilization;",
+  "testCases": [
+    {
+      "schema": [
+        "CREATE TABLE scheme_budget_utilization (scheme_id TEXT, scheme_name TEXT, ministry TEXT, state_code TEXT, year INTEGER, allocated_budget_cr REAL, utilized_budget_cr REAL)",
+        "CREATE TABLE district_policy_outcomes (district_id TEXT, district_name TEXT, state_code TEXT, year INTEGER, health_index REAL, education_index REAL)"
+      ],
+      "seed": [
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH01','PM Awas Yojana','Housing','MH',2020,2035.2,1828.7)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH02','Jal Jeevan Mission','Jal Shakti','UP',2020,1180.6,1096.1)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH03','National Health Mission','Health','KA',2020,4021.3,3660.5)",
+        "INSERT INTO district_policy_outcomes VALUES ('MH01','District_MH_1','MH',2020,65.5,70.0)",
+        "INSERT INTO district_policy_outcomes VALUES ('UP01','District_UP_1','UP',2020,55.0,58.0)",
+        "INSERT INTO district_policy_outcomes VALUES ('KA01','District_KA_1','KA',2020,72.0,75.0)"
+      ],
+      "solutionQuery": "SELECT s.scheme_name AS Scheme, d.district_name AS District, d.health_index AS HealthIndex, d.education_index AS EduIndex FROM scheme_budget_utilization s JOIN district_policy_outcomes d ON s.state_code = d.state_code WHERE d.education_index > 61 AND d.health_index > 61"
+    },
+    {
+      "schema": [
+        "CREATE TABLE scheme_budget_utilization (scheme_id TEXT, scheme_name TEXT, ministry TEXT, state_code TEXT, year INTEGER, allocated_budget_cr REAL, utilized_budget_cr REAL)",
+        "CREATE TABLE district_policy_outcomes (district_id TEXT, district_name TEXT, state_code TEXT, year INTEGER, health_index REAL, education_index REAL)"
+      ],
+      "seed": [
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH01','State Skill Program','Skill','MH',2021,5000.0,4500.0)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH02','Old Age Pension','Social','RJ',2021,800.0,700.0)",
+        "INSERT INTO district_policy_outcomes VALUES ('MH02','District_MH_2','MH',2021,80.1,79.5)",
+        "INSERT INTO district_policy_outcomes VALUES ('RJ01','District_RJ_1','RJ',2021,50.0,55.0)"
+      ],
+      "solutionQuery": "SELECT s.scheme_name AS Scheme, d.district_name AS District, d.health_index AS HealthIndex, d.education_index AS EduIndex FROM scheme_budget_utilization s JOIN district_policy_outcomes d ON s.state_code = d.state_code WHERE d.education_index > 61 AND d.health_index > 61"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+/* Global reset and VSCode-inspired dark theme variables */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-app: #1e1e1e;
+  --bg-panel: #252526;
+  --bg-elevated: #2d2d30;
+  --bg-hover: #2a2d2e;
+  --border: #3e3e42;
+  --text: #cccccc;
+  --text-muted: #858585;
+  --text-bright: #ffffff;
+  --accent: #007acc;
+  --accent-hover: #1a8ad4;
+  --success: #4ec9b0;
+  --success-bg: rgba(78, 201, 176, 0.12);
+  --danger: #f48771;
+  --danger-bg: rgba(244, 135, 113, 0.12);
+  --warning: #dcdcaa;
+  --easy: #4ec9b0;
+  --medium: #dcdcaa;
+  --hard: #f48771;
+  --radius: 8px;
+  --radius-sm: 6px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  --transition: 0.2s ease;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg-app);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text-bright);
+  font-weight: 600;
+}

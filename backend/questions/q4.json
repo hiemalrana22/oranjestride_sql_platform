@@ -1,0 +1,40 @@
+{
+  "id": 4,
+  "day": 8,
+  "title": "Min and Max Campaign Spending",
+  "topic": "Aggregate Functions (MIN, MAX)",
+  "description": "Write a query to find the minimum and maximum Campaign_Spending from book2. Alias the columns as Min_Spending and Max_Spending.",
+  "starterQuery": "SELECT * FROM book2;",
+  "testCases": [
+    {
+      "schema": [
+        "CREATE TABLE book2 (sno INTEGER, Party_Name TEXT, Contact_Name TEXT, Address TEXT, Campaign_Spending INTEGER)"
+      ],
+      "seed": [
+        "INSERT INTO book2 VALUES (1,'BJP','Ram','New Delhi',100000)",
+        "INSERT INTO book2 VALUES (2,'INC','Shyam','Mumbai',101000)",
+        "INSERT INTO book2 VALUES (3,'TMC','Kevin','Chennai',102010)",
+        "INSERT INTO book2 VALUES (4,'SP','Abhishek','Kolkata',103030)",
+        "INSERT INTO book2 VALUES (5,'AAP','Rohan','Surat',104060)",
+        "INSERT INTO book2 VALUES (6,'AIADMK','Varunn','Chandigarh',105101)",
+        "INSERT INTO book2 VALUES (7,'BJP','Amit','Pune',106152)",
+        "INSERT INTO book2 VALUES (8,'INC','Sumit','Hyderabad',107214)",
+        "INSERT INTO book2 VALUES (9,'AIADMK','Sushma','Kanyakumari',108286)",
+        "INSERT INTO book2 VALUES (10,'AAP','Samarjeet','Amritsar',109369)"
+      ],
+      "solutionQuery": "SELECT MIN(Campaign_Spending) AS Min_Spending, MAX(Campaign_Spending) AS Max_Spending FROM book2"
+    },
+    {
+      "schema": [
+        "CREATE TABLE book2 (sno INTEGER, Party_Name TEXT, Contact_Name TEXT, Address TEXT, Campaign_Spending INTEGER)"
+      ],
+      "seed": [
+        "INSERT INTO book2 VALUES (1,'BJP','Ravi','Delhi',50000)",
+        "INSERT INTO book2 VALUES (2,'INC','Priya','Chennai',75000)",
+        "INSERT INTO book2 VALUES (3,'AAP','Ajay','Pune',30000)",
+        "INSERT INTO book2 VALUES (4,'TMC','Nisha','Kolkata',90000)"
+      ],
+      "solutionQuery": "SELECT MIN(Campaign_Spending) AS Min_Spending, MAX(Campaign_Spending) AS Max_Spending FROM book2"
+    }
+  ]
+}

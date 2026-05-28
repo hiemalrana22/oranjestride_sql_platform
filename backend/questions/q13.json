@@ -1,0 +1,41 @@
+{
+  "id": 13,
+  "day": 10,
+  "title": "Schemes with Above-Average Education Impact",
+  "topic": "JOIN + GROUP BY + HAVING",
+  "description": "Write a query joining scheme_budget_utilization and district_policy_outcomes on state_code. Group by scheme_name and use HAVING to keep only schemes where the average education_index across matched districts is greater than 65. Return scheme_name and avg_edu_index.",
+  "starterQuery": "SELECT * FROM scheme_budget_utilization;",
+  "testCases": [
+    {
+      "schema": [
+        "CREATE TABLE scheme_budget_utilization (scheme_id TEXT, scheme_name TEXT, state_code TEXT, year INTEGER, allocated_budget_cr REAL, utilized_budget_cr REAL)",
+        "CREATE TABLE district_policy_outcomes (district_id TEXT, district_name TEXT, state_code TEXT, year INTEGER, health_index REAL, education_index REAL)"
+      ],
+      "seed": [
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH01','PM Awas Yojana','MH',2020,2035.2,1828.7)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH02','State Skill Program','UP',2020,5000.0,4500.0)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH03','Jal Jeevan Mission','KA',2020,1200.0,1050.0)",
+        "INSERT INTO district_policy_outcomes VALUES ('MH01','District_MH_1','MH',2020,65.5,70.0)",
+        "INSERT INTO district_policy_outcomes VALUES ('MH02','District_MH_2','MH',2020,72.0,68.0)",
+        "INSERT INTO district_policy_outcomes VALUES ('UP01','District_UP_1','UP',2020,55.0,58.0)",
+        "INSERT INTO district_policy_outcomes VALUES ('KA01','District_KA_1','KA',2020,80.0,78.0)",
+        "INSERT INTO district_policy_outcomes VALUES ('KA02','District_KA_2','KA',2020,75.0,72.0)"
+      ],
+      "solutionQuery": "SELECT s.scheme_name, AVG(d.education_index) AS avg_edu_index FROM scheme_budget_utilization s JOIN district_policy_outcomes d ON s.state_code = d.state_code GROUP BY s.scheme_name HAVING AVG(d.education_index) > 65"
+    },
+    {
+      "schema": [
+        "CREATE TABLE scheme_budget_utilization (scheme_id TEXT, scheme_name TEXT, state_code TEXT, year INTEGER, allocated_budget_cr REAL, utilized_budget_cr REAL)",
+        "CREATE TABLE district_policy_outcomes (district_id TEXT, district_name TEXT, state_code TEXT, year INTEGER, health_index REAL, education_index REAL)"
+      ],
+      "seed": [
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH04','Old Age Pension','RJ',2021,900.0,800.0)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH05','National Health Mission','GJ',2021,4000.0,3500.0)",
+        "INSERT INTO district_policy_outcomes VALUES ('RJ01','District_RJ_1','RJ',2021,50.0,55.0)",
+        "INSERT INTO district_policy_outcomes VALUES ('GJ01','District_GJ_1','GJ',2021,74.0,80.0)",
+        "INSERT INTO district_policy_outcomes VALUES ('GJ02','District_GJ_2','GJ',2021,68.0,70.0)"
+      ],
+      "solutionQuery": "SELECT s.scheme_name, AVG(d.education_index) AS avg_edu_index FROM scheme_budget_utilization s JOIN district_policy_outcomes d ON s.state_code = d.state_code GROUP BY s.scheme_name HAVING AVG(d.education_index) > 65"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": 5,
+  "day": 8,
+  "title": "Total Campaign Spending",
+  "topic": "Aggregate Functions (SUM)",
+  "description": "Write a query to calculate the total Campaign_Spending across all rows in book2. Alias the result as Total_Spend.",
+  "starterQuery": "SELECT * FROM book2;",
+  "testCases": [
+    {
+      "schema": [
+        "CREATE TABLE book2 (sno INTEGER, Party_Name TEXT, Contact_Name TEXT, Address TEXT, Campaign_Spending INTEGER)"
+      ],
+      "seed": [
+        "INSERT INTO book2 VALUES (1,'BJP','Ram','New Delhi',100000)",
+        "INSERT INTO book2 VALUES (2,'INC','Shyam','Mumbai',101000)",
+        "INSERT INTO book2 VALUES (3,'TMC','Kevin','Chennai',102010)",
+        "INSERT INTO book2 VALUES (4,'SP','Abhishek','Kolkata',103030)",
+        "INSERT INTO book2 VALUES (5,'AAP','Rohan','Surat',104060)",
+        "INSERT INTO book2 VALUES (6,'AIADMK','Varunn','Chandigarh',105101)",
+        "INSERT INTO book2 VALUES (7,'BJP','Amit','Pune',106152)",
+        "INSERT INTO book2 VALUES (8,'INC','Sumit','Hyderabad',107214)",
+        "INSERT INTO book2 VALUES (9,'AIADMK','Sushma','Kanyakumari',108286)",
+        "INSERT INTO book2 VALUES (10,'AAP','Samarjeet','Amritsar',109369)"
+      ],
+      "solutionQuery": "SELECT SUM(Campaign_Spending) AS Total_Spend FROM book2"
+    },
+    {
+      "schema": [
+        "CREATE TABLE book2 (sno INTEGER, Party_Name TEXT, Contact_Name TEXT, Address TEXT, Campaign_Spending INTEGER)"
+      ],
+      "seed": [
+        "INSERT INTO book2 VALUES (1,'BJP','Ravi','Delhi',50000)",
+        "INSERT INTO book2 VALUES (2,'INC','Priya','Chennai',75000)",
+        "INSERT INTO book2 VALUES (3,'AAP','Ajay','Pune',30000)"
+      ],
+      "solutionQuery": "SELECT SUM(Campaign_Spending) AS Total_Spend FROM book2"
+    }
+  ]
+}

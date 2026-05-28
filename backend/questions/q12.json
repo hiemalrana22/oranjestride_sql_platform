@@ -1,0 +1,36 @@
+{
+  "id": 12,
+  "day": 10,
+  "title": "Total Budget Allocated Per Scheme Per Year",
+  "topic": "GROUP BY + SUM",
+  "description": "Write a query to get the total allocated_budget_cr for each combination of year and scheme_name from scheme_budget_utilization. Alias the sum as total_allocated. Group by year and scheme_name.",
+  "starterQuery": "SELECT * FROM scheme_budget_utilization;",
+  "testCases": [
+    {
+      "schema": [
+        "CREATE TABLE scheme_budget_utilization (scheme_id TEXT, scheme_name TEXT, ministry TEXT, state_code TEXT, year INTEGER, allocated_budget_cr REAL, utilized_budget_cr REAL)"
+      ],
+      "seed": [
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH01','PM Awas Yojana','Housing','MH',2020,2035.2,1828.7)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH01','PM Awas Yojana','Housing','UP',2020,1800.0,1600.0)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH02','Jal Jeevan Mission','Jal Shakti','MH',2020,1180.6,1096.1)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH01','PM Awas Yojana','Housing','MH',2021,2873.9,2659.6)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH02','Jal Jeevan Mission','Jal Shakti','MH',2021,3961.1,3760.8)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH02','Jal Jeevan Mission','Jal Shakti','UP',2021,2100.0,1900.0)"
+      ],
+      "solutionQuery": "SELECT year, scheme_name, SUM(allocated_budget_cr) AS total_allocated FROM scheme_budget_utilization GROUP BY year, scheme_name"
+    },
+    {
+      "schema": [
+        "CREATE TABLE scheme_budget_utilization (scheme_id TEXT, scheme_name TEXT, ministry TEXT, state_code TEXT, year INTEGER, allocated_budget_cr REAL, utilized_budget_cr REAL)"
+      ],
+      "seed": [
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH03','National Health Mission','Health','MH',2022,4500.0,4100.0)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH03','National Health Mission','Health','RJ',2022,3200.0,2900.0)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH04','State Skill Program','Skill','MH',2022,5000.0,4700.0)",
+        "INSERT INTO scheme_budget_utilization VALUES ('SCH03','National Health Mission','Health','MH',2023,4800.0,4300.0)"
+      ],
+      "solutionQuery": "SELECT year, scheme_name, SUM(allocated_budget_cr) AS total_allocated FROM scheme_budget_utilization GROUP BY year, scheme_name"
+    }
+  ]
+}
