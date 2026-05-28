@@ -4,13 +4,18 @@
 function ProblemDescription({ question }) {
   if (!question) return null;
 
-  const difficultyClass = question.difficulty.toLowerCase();
+  const difficultyClass = (question.difficulty || 'easy').toLowerCase();
 
   return (
     <div className="problem-description">
       <header className="problem-header">
         <h1 className="problem-header__title">{question.title}</h1>
-        <span className={`badge badge--${difficultyClass}`}>{question.difficulty}</span>
+        <span className={`badge badge--${difficultyClass}`}>{question.difficulty || 'Easy'}</span>
+        {question.topic && (
+          <span className="problem-section__text" style={{ display: 'block', marginTop: '0.35rem' }}>
+            Topic: {question.topic}
+          </span>
+        )}
       </header>
 
       <section className="problem-section">

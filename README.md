@@ -47,7 +47,17 @@ No environment variables required for the current mock API.
 
 Or deploy via `render.yaml` at the repo root.
 
-Set `VITE_API_URL` on Vercel to your Render URL when connecting the frontend.
+### Connect frontend (Vercel)
+
+The app calls `https://oranjestride-sql-platform.onrender.com` by default.
+
+On Vercel → **Settings** → **Environment Variables**, optionally set:
+
+| Key | Value |
+|-----|--------|
+| `VITE_API_URL` | `https://oranjestride-sql-platform.onrender.com` |
+
+Redeploy after adding the variable.
 
 ## Project structure
 

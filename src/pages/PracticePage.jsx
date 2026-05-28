@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { mockQuestions, getQuestionById } from '../data/mockQuestions';
-import { runQuery } from '../services/api';
+import { fetchQuestions, fetchQuestion, runQuery } from '../services/api';
 import Navbar from '../components/Navbar';
 import QuestionSidebar from '../components/QuestionSidebar';
 import ProblemDescription from '../components/ProblemDescription';
@@ -13,23 +12,78 @@ import ExecutionInfo from '../components/ExecutionInfo';
 import Loader from '../components/Loader';
 
 /**
- * Main practice page — split view with problems on the left and editor on the right.
+ * Main practice page — loads questions from Render API.
  */
 function PracticePage() {
-  const [activeQuestionId, setActiveQuestionId] = useState(mockQuestions[0].id);
-  const [sql, setSql] = useState(mockQuestions[0].starterSql);
+  const [questions, setQuestions] = useState([]);
+  const [activeQuestion, setActiveQuestion] = useState(null);
+  const [activeQuestionId, setActiveQuestionId] = useState(null);
+  const [sql, setSql] = useState('');
   const [isRunning, setIsRunning] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState(null);
   const [hasRun, setHasRun] = useState(false);
   const [response, setResponse] = useState(null);
 
-  const activeQuestion = getQuestionById(activeQuestionId);
-
-  // When user picks a new question, load its starter SQL and clear results
+  // Load question list on mount
   useEffect(() => {
-    const question = getQuestionById(activeQuestionId);
-    setSql(question.starterSql);
-    setHasRun(false);
-    setResponse(null);
+    let cancelled = false;
+
+    async function load() {
+      setIsLoading(true);
+      setLoadError(null);
+      try {
+        const list = await fetchQuestions();
+        if (cancelled) return;
+        if (list.length === 0) {
+          setLoadError('No questions found on the server.');
+          return;
+        }
+        setQuestions(list);
+        setActiveQuestionId(list[0].id);
+      } catch {
+        if (!cancelled) {
+          setLoadError(
+            'Could not load questions. Check that the API is running at ' +
+              (import.meta.env.VITE_API_URL || 'https://oranjestride-sql-platform.onrender.com')
+          );
+        }
+      } finally {
+        if (!cancelled) setIsLoading(false);
+      }
+    }
+
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Load full question details when selection changes
+  useEffect(() => {
+    if (!activeQuestionId) return;
+
+    let cancelled = false;
+
+    async function loadDetail() {
+      try {
+        const detail = await fetchQuestion(activeQuestionId);
+        if (cancelled) return;
+        setActiveQuestion(detail);
+        setSql(detail.starterSql || '');
+        setHasRun(false);
+        setResponse(null);
+      } catch {
+        if (!cancelled) {
+          setLoadError(`Could not load question ${activeQuestionId}.`);
+        }
+      }
+    }
+
+    loadDetail();
+    return () => {
+      cancelled = true;
+    };
   }, [activeQuestionId]);
 
   const handleSelectQuestion = (id) => {
@@ -37,12 +91,16 @@ function PracticePage() {
   };
 
   const handleReset = () => {
-    setSql(activeQuestion.starterSql);
+    if (activeQuestion) {
+      setSql(activeQuestion.starterSql || '');
+    }
     setHasRun(false);
     setResponse(null);
   };
 
   const handleRun = async () => {
+    if (!activeQuestionId) return;
+
     setIsRunning(true);
     setHasRun(false);
     setResponse(null);
@@ -51,14 +109,18 @@ function PracticePage() {
       const result = await runQuery(activeQuestionId, sql);
       setResponse(result);
       setHasRun(true);
-    } catch {
+    } catch (err) {
+      const message =
+        err.response?.data?.error ||
+        err.message ||
+        'Network error: could not reach the server.';
       setResponse({
         passed: false,
         passedTests: 0,
-        totalTests: 4,
+        totalTests: activeQuestion?.totalTests ?? 0,
         executionTime: '0ms',
         result: [],
-        error: 'Network error: could not reach the server. Using mock mode — try again.',
+        error: message,
       });
       setHasRun(true);
     } finally {
@@ -68,29 +130,56 @@ function PracticePage() {
 
   const showSuccessMessage = hasRun && response && !response.error && response.passed;
 
+  if (isLoading) {
+    return (
+      <div className="app-shell">
+        <Navbar />
+        <Loader visible />
+        <p style={{ textAlign: 'center', padding: '2rem', color: '#858585' }}>
+          Loading questions…
+        </p>
+      </div>
+    );
+  }
+
+  if (loadError) {
+    return (
+      <div className="app-shell">
+        <Navbar />
+        <div className="alert alert--error" style={{ margin: '2rem' }} role="alert">
+          {loadError}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="app-shell">
       <Navbar />
       <Loader visible={isRunning} />
 
       <div className="practice-layout">
-        {/* Left panel: questions + problem details */}
         <div className="left-panel">
           <div className="left-panel__sidebar">
             <QuestionSidebar
-              questions={mockQuestions}
+              questions={questions}
               activeId={activeQuestionId}
               onSelect={handleSelectQuestion}
             />
           </div>
           <div className="left-panel__content">
-            <ProblemDescription question={activeQuestion} />
-            <SchemaViewer schema={activeQuestion.schema} />
-            <SampleDataTable question={activeQuestion} />
+            {activeQuestion ? (
+              <>
+                <ProblemDescription question={activeQuestion} />
+                <SchemaViewer schema={activeQuestion.schema} />
+                <SampleDataTable question={activeQuestion} />
+              </>
+            ) : (
+              <p className="problem-section__text">Loading problem…</p>
+            )}
           </div>
         </div>
 
-        {/* Right panel: editor + output */}
         <div className="right-panel">
           <div className="right-panel__editor">
             <SqlEditor
@@ -113,14 +202,14 @@ function PracticePage() {
 
             {showSuccessMessage && (
               <div className="alert alert--success" role="status">
-                Query executed successfully. Output matches expected results.
+                Query executed successfully. All test cases passed.
               </div>
             )}
 
             <TestCaseStatus
               passed={response?.passed}
               passedTests={response?.passedTests ?? 0}
-              totalTests={response?.totalTests ?? 4}
+              totalTests={response?.totalTests ?? 0}
               hasRun={hasRun}
             />
 

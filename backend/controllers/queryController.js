@@ -10,6 +10,7 @@ const fs   = require("fs");
 
 const { validateQuery } = require("../utils/validateQuery");
 const { runTestCase }   = require("../utils/runTestCase");
+const { formatQuestionForDisplay } = require("../utils/parseQuestionForDisplay");
 
 // Path to the questions folder
 const QUESTIONS_DIR = path.join(__dirname, "..", "questions");
@@ -42,6 +43,7 @@ function listQuestions(req, res) {
           day:          q.day,
           title:        q.title,
           topic:        q.topic,
+          difficulty:   q.day <= 8 ? "Easy" : q.day <= 12 ? "Medium" : "Hard",
           description:  q.description,
           starterQuery: q.starterQuery,
           totalTests:   q.testCases.length,
@@ -55,6 +57,21 @@ function listQuestions(req, res) {
     .sort((a, b) => a.id - b.id);
 
   return res.status(200).json({ questions });
+}
+
+// ─────────────────────────────────────────────
+// GET /api/questions/:id
+// Full question for the problem panel (schema, sample data)
+// ─────────────────────────────────────────────
+function getQuestion(req, res) {
+  const questionId = Number(req.params.id);
+  const question = loadQuestion(questionId);
+
+  if (!question) {
+    return res.status(404).json({ error: `Question ${questionId} not found.` });
+  }
+
+  return res.status(200).json({ question: formatQuestionForDisplay(question) });
 }
 
 // ─────────────────────────────────────────────
@@ -138,4 +155,4 @@ function runQuery(req, res) {
   });
 }
 
-module.exports = { runQuery, listQuestions };
+module.exports = { runQuery, listQuestions, getQuestion };

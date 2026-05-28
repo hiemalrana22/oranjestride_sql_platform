@@ -9,7 +9,7 @@ function QuestionSidebar({ questions, activeId, onSelect }) {
       <ul className="question-sidebar__list">
         {questions.map((question) => {
           const isActive = question.id === activeId;
-          const difficultyClass = question.difficulty.toLowerCase();
+          const difficultyClass = (question.difficulty || 'easy').toLowerCase();
 
           return (
             <li key={question.id}>

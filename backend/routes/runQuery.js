@@ -5,7 +5,7 @@
 
 const express      = require("express");
 const router       = express.Router();
-const { runQuery, listQuestions } = require("../controllers/queryController");
+const { runQuery, listQuestions, getQuestion } = require("../controllers/queryController");
 
 /**
  * GET /api/questions
@@ -13,6 +13,12 @@ const { runQuery, listQuestions } = require("../controllers/queryController");
  * Used by the frontend to render the question list.
  */
 router.get("/questions", listQuestions);
+
+/**
+ * GET /api/questions/:id
+ * Full question details for the problem panel.
+ */
+router.get("/questions/:id", getQuestion);
 
 /**
  * POST /api/run-query
