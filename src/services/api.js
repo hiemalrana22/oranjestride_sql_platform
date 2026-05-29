@@ -84,6 +84,18 @@ export async function fetchPracticeTables() {
 }
 
 /**
+ * Fetch sample rows for a dataset (expected output reference).
+ */
+export async function fetchTablePreview(tableName) {
+  try {
+    const { data } = await api.get(`/api/practice/tables/${tableName}/preview`);
+    return data;
+  } catch (err) {
+    throw new Error(formatApiError(err, `Could not load preview for ${tableName}`));
+  }
+}
+
+/**
  * Run a free-form SELECT query against the practice database.
  */
 export async function runPracticeQuery(sql) {

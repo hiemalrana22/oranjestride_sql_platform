@@ -1,0 +1,500 @@
+constituency_id,constituency,candidate,party,total_votes,margin
+Ichapuram,1,Manabala Ramarao,Independent,83247,813
+Ichapuram,1,Appadu Sahu,Independent,83247,1743
+Ichapuram,1,Uppada Rangababu,Indian National Congress,83247,4427
+Ichapuram,1,Kalla Balarama Swamy,Indian National Congress (I),83247,19805
+Ichapuram,1,Bendalam Venkatesam Sarma,Janata Party,83247,34251
+Sompeta,2,Ganni Padmanabharao,Indian National Congress,91272,2694
+Sompeta,2,Tulasidas Majji,Indian National Congress (I),91272,28251
+Sompeta,2,Gouthu Latchanna,Janata Party,91272,42251
+Tekkali,3,Hussana Begam,Indian National Congress (I),90959,7998
+Tekkali,3,Satharu Lakanadham Naidu,Indian National Congress,90959,22502
+Tekkali,3,Bammaidi Narayanaswami,Janata Party,90959,36206
+Harishchandra,4,Goddu Latchunnaidu Alias G. L. Naidu,Indian National Congress (I),89545,10809
+Harishchandra,4,Krishna Murti- Kinjarapu,Janata Party,89545,24070
+Harishchandra,4,Appalanarasimha Bugata Kennapalli,Indian National Congress,89545,26381
+Narasannapeta,5,Gudiya Ramulu,Independent,84082,1194
+Narasannapeta,5,Baggu Sarojinamma,Indian National Congress,84082,12844
+Narasannapeta,5,Simma Jagannadham,Janata Party,84082,22397
+Narasannapeta,5,Dola Seetaramulu,Indian National Congress (I),84082,28123
+Patapatnam,6,Lingala Janardhanarao,Independent,85052,565
+Patapatnam,6,Killamsetty Trinadu Kumar,Independent,85052,1152
+Patapatnam,6,Varanasi Narayanarao,Independent,85052,2071
+Patapatnam,6,Darapu Govinda Rajulu,Communist Party Of India,85052,6639
+Patapatnam,6,Kamakshi Prasad Brahma,Indian National Congress (I),85052,12141
+Patapatnam,6,Lukulapu Lakshmanadas,Janata Party,85052,19111
+Patapatnam,6,Kalamata Mohanarao,Independent,85052,19935
+Kothuru,7,Palaka Narasaiah,Indian National Congress,91401,9639
+Kothuru,7,Nimmaka Gopala Rao,Indian National Congress (I),91401,21724
+Kothuru,7,Viswasarai Narasimharao,Janata Party,91401,25317
+Naguru,8,Thotapalli Lakshmana Murthy,Independent,84166,3312
+Naguru,8,Sreerama Chiranjeevi,Indian National Congress (I),84166,9336
+Naguru,8,Chandra Chudanami Dev Vyricherla,Indian National Congress,84166,18248
+Naguru,8,Satrucharala Vijaya Rama Raju,Janata Party,84166,19781
+Parvathipuram,9,Venugopala Rao Pakki,Independent,82282,1801
+Parvathipuram,9,Paruvada Jagannadha Rao,Indian National Congress (I),82282,12025
+Parvathipuram,9,Krishnamurthy Naidu Vasireddi,Indian National Congress,82282,17671
+Parvathipuram,9,Parasuramnaidu Chikati,Janata Party,82282,32494
+Salur,10,Lakshmi Narasimha Sahyasi Raju,Janata Party,78094,24477
+Salur,10,S. R. T. P. S. Veerapa Raju,Communist Party Of India,78094,29126
+Bobbili,11,Reddy Krishnamurthy,Independent,84650,1515
+Bobbili,11,Sala Kondala Rao,Independent,84650,4703
+Bobbili,11,Marrapu Satynarayana,Indian National Congress,84650,6915
+Bobbili,11,Chappa Krishnamurthy Naidu,Indian National Congress (I),84650,11226
+Bobbili,11,Reddy Satya Rao,Independent,84650,15707
+Bobbili,11,Kolli Venkata Kurmi Naidu,Janata Party,84650,29184
+Therlam,12,Tadde Ramarao,Indian National Congress (I),97045,20491
+Therlam,12,Tentu Lakshunnaidu,Janata Party,97045,26735
+Therlam,12,Vasireddi Varada Ramarao,Indian National Congress,97045,29024
+Vunukuru,13,Setti Subbi Naidu,Independent,95850,1553
+Vunukuru,13,Gullipalli Shivaramunaidu,Independent,95850,10622
+Vunukuru,13,Krri Narayanarao,Indian National Congress (I),95850,14544
+Vunukuru,13,Palavalasa Rimkinamma,Indian National Congress,95850,20030
+Vunukuru,13,Babu Parankusam Mudili,Janata Party,95850,26617
+Palakonda,14,Samala Madhavarao,Independent,79350,802
+Palakonda,14,Nuthulapati Bala Padmavati,Republican Party Of India (Khobragade),79350,2668
+Palakonda,14,Dunga Subhashiniraju,Independent,79350,3278
+Palakonda,14,Pagadalamma Sukka,Indian National Congress,79350,10319
+Palakonda,14,Daramana Adinarayana,Indian National Congress (I),79350,12387
+Palakonda,14,Kambala Rajaratnam,Janata Party,79350,24145
+Amadalavalasa,15,Banna Karunakararao,Independent,83276,848
+Amadalavalasa,15,Metta Jaggubhatlu,Independent,83276,4317
+Amadalavalasa,15,Thammineni Paparao,Janata Party,83276,17559
+Amadalavalasa,15,Venkatappalanaidu Peerukatla,Indian National Congress (I),83276,18375
+Amadalavalasa,15,Srinamamurthy Pydi,Indian National Congress,83276,21750
+Srikakulam,16,Gerimella Ramakrishna,Independent,96721,928
+Srikakulam,16,Niddapu Sannibabu,Independent,96721,2286
+Srikakulam,16,Ippilli Venkatrao,Independent,96721,5270
+Srikakulam,16,Mylapilli Satyarajula,Independent,96721,7509
+Srikakulam,16,Tangi Satyanarayana,Indian National Congress,96721,14766
+Srikakulam,16,Raghavadas Tripurna,Indian National Congress (I),96721,16556
+Srikakulam,16,Challa Lakshminarayana,Janata Party,96721,23643
+Etcherla,17,Makayya Koppala,Independent,86150,557
+Etcherla,17,Manda Venkatrao,Independent,86150,4017
+Etcherla,17,Kanchayya Potnuru,Indian National Congress,86150,8651
+Etcherla,17,Boddepalli Narasimhulu,Indian National Congress (I),86150,15481
+Etcherla,17,Kothapalli Narasayya,Janata Party,86150,25272
+Cheepurupalli,18,Bevara Venugopalanaidu,Independent,95041,1867
+Cheepurupalli,18,Kutcherlapati Laxmipathi Raju,Indian National Congress,95041,7465
+Cheepurupalli,18,Ravuthu Paidapunaidu,Janata Party,95041,13083
+Cheepurupalli,18,Akkalanaidu Tankala,Independent,95041,17034
+Cheepurupalli,18,Chigilipalli Syamalarao,Indian National Congress (I),95041,27943
+Gajapathinagaram,19,Samantula Adinarayana,Independent,90161,567
+Gajapathinagaram,19,Madhuri Vijayarama Gajapatiraju Pusapati,Indian National Congress (I),90161,3700
+Gajapathinagaram,19,Taddi Sanyasi Naidu,Indian National Congress,90161,17693
+Gajapathinagaram,19,Venkata Gangaraju Narkedamilli,Independent,90161,23945
+Gajapathinagaram,19,Vangapandu Narayanappala Naidu,Janata Party,90161,27091
+Vizianagaram,20,Patchipilli Dasu,Independent,88805,1393
+Vizianagaram,20,Modili Satyam,Indian National Congress (I),88805,11760
+Vizianagaram,20,Appanadora Appasani,Indian National Congress,88805,13829
+Vizianagaram,20,Shree Ashok Gajapathi Raju Poosapati,Janata Party,88805,39914
+Sathivada,21,Sriramulu Naidu Shunkari,Indian National Congress (I),87812,7022
+Sathivada,21,Gullipalli Venkat Rao,Independent,87812,12617
+Sathivada,21,Baireddy Suryanarayana,Janata Party,87812,13853
+Sathivada,21,Sambiasivaraju Penumatcha,Indian National Congress,87812,35935
+Bhogapuram,22,Pulapa Appala Suryaprakasarao,Indian National Congress (I),82036,9208
+Bhogapuram,22,Pativada Narayanaswamynaidu,Janata Party,82036,19275
+Bhogapuram,22,Appadudora Kommuru,Indian National Congress,82036,30716
+Bheemunipatnam,23,Kilari Potham Naidu,Independent,96472,2421
+Bheemunipatnam,23,Mokara Narayana Rao,Independent,96472,6936
+Bheemunipatnam,23,Appala Narasimha Raju K. S.,Janata Party,96472,8385
+Bheemunipatnam,23,Devi Kumara Soma Sundra Suryanarayana Raju Raja Sagi,Indian National Congress,96472,13403
+Bheemunipatnam,23,Datla Jagannadha Raju,Indian National Congress (I),96472,34758
+Visakhapatnam-I,24,Madana Veerqanna,Independent,78346,343
+Visakhapatnam-I,24,K. Balaram,Independent,78346,997
+Visakhapatnam-I,24,Chenna Suryanarayana Rao,Independent,78346,1219
+Visakhapatnam-I,24,Deam M. R.,Indian National Congress,78346,4821
+Visakhapatnam-I,24,Sylada Pudithalli Naidu,Janata Party,78346,21389
+Visakhapatnam-I,24,Sunkari Alwar Das,Indian National Congress (I),78346,23811
+Visakhapatnam-Ii,25,Gummidi Madhava Swamy,Independent,107285,1018
+Visakhapatnam-Ii,25,Boddeti Suryanarayana,Independent,107285,4400
+Visakhapatnam-Ii,25,Gudivada Venkata Ramana,Indian National Congress,107285,4668
+Visakhapatnam-Ii,25,Atchiraju Naidana,Independent,107285,5975
+Visakhapatnam-Ii,25,Ch. Sesibhusana Rao,Indian National Congress (I),107285,22503
+Visakhapatnam-Ii,25,N. S. N. Reddy,Janata Party,107285,34070
+Pendurthi,26,Bonu Lakshmana Rao,Independent,102350,558
+Pendurthi,26,Kotni Satyanarayana,Independent,102350,769
+Pendurthi,26,Jeenapati Suryanarayana,Independent,102350,968
+Pendurthi,26,Gurumurthy Reddy Gorusu,Independent,102350,2998
+Pendurthi,26,Pothina Sanyasi Rao,Communist Party Of India,102350,16678
+Pendurthi,26,Gangadhara Reddi Sabbella,Communist Party Of India (Marxist),102350,18848
+Pendurthi,26,Gudivada Appanna,Indian National Congress (I),102350,28895
+Uttarapalli,27,Vinnakoti China Appala Raju,Independent,89840,577
+Uttarapalli,27,R. Mazumder,Independent,89840,1817
+Uttarapalli,27,Ramarao Gandhavarapu,Independent,89840,2700
+Uttarapalli,27,Kolla Appalanaidu,Janata Party,89840,18105
+Uttarapalli,27,Boddu Suryanarayana Murty,Indian National Congress,89840,22074
+Uttarapalli,27,Vijaya Raghava Satyanarayana Padmanabha Raju Kakarlapudi,Indian National Congress (I),89840,23657
+Srungavarapukota,28,Duvvapu Thowdu,Independent,99566,1874
+Srungavarapukota,28,Gujala Dharma Naidu,Indian National Congress,99566,7373
+Srungavarapukota,28,Mutyalu Janni,Janata Party,99566,12170
+Srungavarapukota,28,Balaraju Pujari,Independent,99566,16564
+Srungavarapukota,28,Sanyasidora Duru,Indian National Congress (I),99566,21927
+Paderu,29,Adapa Gangunaidu,Independent,88148,519
+Paderu,29,Kanta Mutyalu,Independent,88148,557
+Paderu,29,Sontena David Lakshmaji,Independent,88148,1090
+Paderu,29,Thamarba Chittinaidu,Indian National Congress,88148,10146
+Paderu,29,Giddi Appalanaidu,Janata Party,88148,12653
+Madugula,30,Donda Varahalu Dora,Janata Party,99072,6263
+Madugula,30,Kalavathi Boddu,Indian National Congress,99072,11405
+Madugula,30,Bhumireddy Satyanarayana,Independent,99072,12784
+Madugula,30,Gummala Adinarayana,Indian National Congress (I),99072,18710
+Madugula,30,Kuracha Ramunaidu,Independent,99072,19147
+Chodavaram,31,Petla Sanyasirao,Independent,109220,5266
+Chodavaram,31,Bhuthanadhu Satyannarayana,Independent,109220,5876
+Chodavaram,31,Palayalli Vechalapu,Indian National Congress,109220,28624
+Chodavaram,31,Seetharama Sastri Emani,Janata Party,109220,40690
+Anakapalli,32,J. C. Guruvulu,Republican Party Of India (Khobragade),93208,1271
+Anakapalli,32,Duvvda Venkatrao,Independent,93208,3285
+Anakapalli,32,Majji Prasadrao,Independent,93208,15149
+Anakapalli,32,P. V. Chalapitarao,Janata Party,93208,19945
+Anakapalli,32,Koduganti Govindrao,Communist Party Of India,93208,28382
+Paravada,33,Arva Seetharamayya,Indian National Congress (I),95367,15689
+Paravada,33,Payila Appalanaidu,Janata Party,95367,18006
+Paravada,33,Bhattam Sri Rama Murty,Indian National Congress,95367,31498
+Elamanchili,34,Koyilada Nookaraja,Independent,97794,1712
+Elamanchili,34,Akella Srihari,Indian National Congress (I),97794,3407
+Elamanchili,34,Nagireddi Satyanarayana,Janata Party,97794,29302
+Elamanchili,34,Veesamu Sanyasinayudu,Indian National Congress,97794,37969
+Payakaraopeta,35,Beera Nagabhushanam,Independent,87590,1215
+Payakaraopeta,35,Gantala Suryanarayana,Janata Party,87590,5543
+Payakaraopeta,35,Gara China Nookaraju,Indian National Congress,87590,14023
+Payakaraopeta,35,Maruthi Adeyya,Indian National Congress (I),87590,29490
+Narsipatnam,36,Sathibabu Lalam,Indian National Congress (I),96125,4950
+Narsipatnam,36,Suryanarayanaraju Sri Raja Sagi,Janata Party,96125,31649
+Narsipatnam,36,Gopatrudu Bolem,Indian National Congress,96125,40209
+Chintapalli,37,Mukkali Chitukayya,Independent,91075,887
+Chintapalli,37,Dongabanti Venkata Raju,Independent,91075,978
+Chintapalli,37,Inguva Ramanna Padal,Janata Party,91075,11006
+Chintapalli,37,Kannalu Lokula,Indian National Congress (I),91075,14707
+Chintapalli,37,Kondalarao Depuru,Indian National Congress,91075,18363
+Yellavaram,38,Karam Bapanna Dosa,Independent,83132,1636
+Yellavaram,38,Chodi Mallikharjuna,Indian National Congress,83132,7503
+Yellavaram,38,Ratnabai Tadapatla,Janata Party,83132,9151
+Yellavaram,38,Gorrela Prakasa Rao,Indian National Congress (I),83132,23345
+Burugupudi,39,Reeddi Bulleabbai,Independent,101217,828
+Burugupudi,39,Korpu Venkata Rama Krishna,Indian National Congress,101217,13114
+Burugupudi,39,Dasari Kasi Viswanadhrao,Independent,101217,20314
+Burugupudi,39,Sambasiva Rao Pendurti,Janata Party,101217,22217
+Burugupudi,39,Padma Raju Varrey,Indian National Congress (I),101217,25124
+Rajahmundry,40,Bhaskar Patel ( Patelkhana Bhaskararao ),Independent,101345,414
+Rajahmundry,40,G. S. Balaji Das ( Guruvugari Simhachala Balaji Das ),Communist Party Of India (Marxist),101345,19620
+Rajahmundry,40,Chitturi Prabhakara Chowdary,Communist Party Of India,101345,19647
+Rajahmundry,40,Tadavarthi Satyavathi,Indian National Congress (I),101345,35079
+Kadiam,41,Raju Chandramalla,Independent,105882,367
+Kadiam,41,Eathara Kondalarao,Independent,105882,945
+Kadiam,41,Torati Satyanarayana,Independent,105882,1149
+Kadiam,41,Chodavaraparu Gandhi,Independent,105882,1282
+Kadiam,41,Batina Subharao,Indian National Congress,105882,17825
+Kadiam,41,P. S. Rao,Indian National Congress (I),105882,30300
+Kadiam,41,Ammiraju Patamsetti,Janata Party,105882,30887
+Jaggampeta,42,Thota Venkata Suryanarayanamurty,Indian National Congress,100328,6515
+Jaggampeta,42,Vaddi Mutyalarao,Janata Party,100328,30683
+Jaggampeta,42,Pantham Padamanabham,Indian National Congress (I),100328,40566
+Peddapuram,43,Gudala Nagaraju,Independent,98148,688
+Peddapuram,43,Bedampudi Israel,Republican Party Of India (Khobragade),98148,1517
+Peddapuram,43,Kondapalli Krishnamurthy,Indian National Congress,98148,5753
+Peddapuram,43,Yeleti Dhanayya,Janata Party,98148,23375
+Peddapuram,43,Vundavalli Narayanamurthy,Indian National Congress (I),98148,43595
+Prathipadu,44,Veerabhadrarao Mudgragada,Independent,105294,211
+Prathipadu,44,Venkamadora Sri Somarouthu,Independent,105294,304
+Prathipadu,44,Kollu Krishnarao,Independent,105294,2252
+Prathipadu,44,Y. Savitridevi,Indian National Congress,105294,3017
+Prathipadu,44,Chittabbai Alias Appala Naidu Nallamilli,Independent,105294,5704
+Prathipadu,44,Alamanda Pandurangaswamy,Independent,105294,6575
+Prathipadu,44,Karri Suryanarayanamurty,Independent,105294,8036
+Prathipadu,44,Appalaraju Varupula,Indian National Congress (I),105294,22352
+Prathipadu,44,Mudragada Padmanabham,Janata Party,105294,32614
+Tuni,45,Bandaru Kannaiah Dora,Janata Party,104162,12258
+Tuni,45,Kongara Venkata Satya Prasad,Indian National Congress (I),104162,26567
+Tuni,45,Vijayalakshmidevi Meerrja Nallaparaju,Indian National Congress,104162,37219
+Pithapuram,46,Suryanarayana Murthy Yella,Indian National Congress,85540,2754
+Pithapuram,46,Singisetty Veerabhadra Rao,Independent,85540,9897
+Pithapuram,46,Peketi Thammiraju,Janata Party,85540,23685
+Pithapuram,46,Koppana Venkata Chandra Mohanarao,Indian National Congress (I),85540,28585
+Sampara,47,Garimella Janaki Ramayya,Independent,103737,467
+Sampara,47,Palika Apparao,Independent,103737,1928
+Sampara,47,Swamy,Independent,103737,7719
+Sampara,47,Cherukuvada Venkatratnam,Indian National Congress,103737,11027
+Sampara,47,Madadha John Apparao,Janata Party,103737,20233
+Sampara,47,Venkatramana Matta,Indian National Congress (I),103737,36120
+Kakinada,48,Mallampalli Sree Ram,Independent,110642,239
+Kakinada,48,Ahmed Ali Mohammad,Independent,110642,412
+Kakinada,48,Gurram Kameswarao,Independent,110642,500
+Kakinada,48,Beeraka Subramanyam,Independent,110642,503
+Kakinada,48,I. B. Ramakrishna Rao,Indian National Congress,110642,2802
+Kakinada,48,C. V. K. Rao,Independent,110642,8235
+Kakinada,48,Katha Janardhana Rao,Janata Party,110642,25502
+Kakinada,48,Malladi Swamy,Indian National Congress (I),110642,37258
+Tallarevu,49,Venkateswarlu Chandrabhatla,Independent,95367,730
+Tallarevu,49,Illa Suryanarayana,Independent,95367,1893
+Tallarevu,49,Angani Sreeramachandra Verma,Independent,95367,2501
+Tallarevu,49,Venkatrao Palla,Indian National Congress,95367,10789
+Tallarevu,49,Sathiraju Sadanala,Indian National Congress (I),95367,24415
+Tallarevu,49,Suryanarayana Biruda,Janata Party,95367,33021
+Anaparthy,50,Gandrala Sreerama Murthy,Independent,91047,96
+Anaparthy,50,Thondapu Sathi Reddy,Independent,91047,253
+Anaparthy,50,Gortha Janakayya,Independent,91047,336
+Anaparthy,50,Sanyasi Rao,Independent,91047,1080
+Anaparthy,50,Mallidi Haranatha Reddy,Indian National Congress (I),91047,13199
+Anaparthy,50,Undavilli Satyanarayana Murty,Indian National Congress,91047,22982
+Anaparthy,50,Padala Ammi Reddy,Janata Party,91047,37261
+Ramachandrapuram,51,Katakam Satyanandam,Independent,99686,452
+Ramachandrapuram,51,Bodapati Paparao,Independent,99686,1392
+Ramachandrapuram,51,D. Satyanarayana Reddi,Indian National Congress (I),99686,16660
+Ramachandrapuram,51,Gadam Kamladevi,Indian National Congress,99686,18764
+Ramachandrapuram,51,Mudragada Venkastaswamy Naidu,Janata Party,99686,19045
+Ramachandrapuram,51,Apparao Pilli,Independent,99686,19306
+Alamuru,52,Meka Suryachandra Pattabhi Ramarao,Independent,105938,358
+Alamuru,52,K. Kotaiah,Independent,105938,558
+Alamuru,52,Veedhi Venkatrao,Independent,105938,689
+Alamuru,52,D. Virupaksham,Independent,105938,700
+Alamuru,52,Palacherla Panasaramanna,Communist Party Of India,105938,5559
+Alamuru,52,S. B. P. B. K. Satyanarayana Rao,Janata Party,105938,35835
+Alamuru,52,S. Venkata Reddy,Indian National Congress (I),105938,42372
+Mummidivaram,53,Chuttugulla Veera Swami,Independent,104699,908
+Mummidivaram,53,Kasi Sumangali,Independent,104699,1635
+Mummidivaram,53,Kasi Kondala Rao,Indian National Congress,104699,7788
+Mummidivaram,53,Appalaswamy Bojja,Janata Party,104699,24691
+Mummidivaram,53,Moka Sri Vishnu Prasada Rao,Indian National Congress (I),104699,37919
+Allavaram,54,Pulusuganti,Independent,88715,916
+Allavaram,54,Paramata Veera Raghuvulu,Indian National Congress,88715,9379
+Allavaram,54,B. V. Ramanayya,Republican Party Of India (Khobragade),88715,21242
+Allavaram,54,Venkatapathi Devarapalli,Indian National Congress (I),88715,29811
+Amalapuram,55,Pericherla China Venkata Raju,Independent,89001,402
+Amalapuram,55,Kudipudi Prabhakara Rao,Indian National Congress,89001,22693
+Amalapuram,55,Nageswara Rao Dommety,Indian National Congress (I),89001,23492
+Amalapuram,55,Venkata Sri Rama Rao Palacholla,Janata Party,89001,25900
+Kothapeta,56,Saripella Sita Ramaraju,Independent,88852,378
+Kothapeta,56,Chandra Rao Merla,Independent,88852,865
+Kothapeta,56,Saka Satyam,Indian National Congress (I),88852,12601
+Kothapeta,56,Chirla Soma Sumdara Reddy,Indian National Congress,88852,28110
+Kothapeta,56,Manthena Venkata Surya Subharaju,Janata Party,88852,31679
+Nagaram,57,Bhupathi Tirupathi,Republican Party Of India (Khobragade),92311,1272
+Nagaram,57,Bathul Venkata Rao,Indian National Congress,92311,11140
+Nagaram,57,S. Pemulu,Janata Party,92311,21387
+Nagaram,57,Ganapathi Rao Neethipudi,Indian National Congress (I),92311,35891
+Razole,58,Kanety Mohanarao,Independent,91694,700
+Razole,58,Balla Sreeramulu,Janata Party,91694,17135
+Razole,58,Sayyaparaju Seetharamaraju Alias Gandhiraju,Indian National Congress (I),91694,17652
+Razole,58,Rudraraju Ramalingaraju,Indian National Congress,91694,37992
+Narasapur,59,Kovvali Ayyanna Nayudu,Independent,102620,632
+Narasapur,59,Kotla Venkata Seshyya,Indian National Congress,102620,17273
+Narasapur,59,Polisetti Vasudeva Rao,Janata Party,102620,24933
+Narasapur,59,Sheshavataram Parakala,Indian National Congress (I),102620,36767
+Palacole,60,Gadiraju Bangaramma,Independent,93089,667
+Palacole,60,Alluri Satyanarayana Rao,Communist Party Of India (Marxist),93089,16639
+Palacole,60,Chodisetti Suryarao,Indian National Congress,93089,19699
+Palacole,60,Vardhineedi Satyanarayana,Indian National Congress (I),93089,32762
+Achanta,61,Dasari Perumallu,Indian National Congress,96064,11531
+Achanta,61,Didupatti Sundrara Raju,Communist Party Of India (Marxist),96064,21622
+Achanta,61,Kota Dhana Raju,Indian National Congress (I),96064,39504
+Bhimavaram,62,Bhupathiraju Bangarraju,Independent,109457,593
+Bhimavaram,62,Luther Nanneti,Independent,109457,617
+Bhimavaram,62,Gudapati Daniel,Independent,109457,1486
+Bhimavaram,62,Nachu Venkatramaiah,Indian National Congress,109457,10448
+Bhimavaram,62,Mentay Padamanabham,Janata Party,109457,26065
+Bhimavaram,62,Kalidindi Vijayayanarasimha Raju,Indian National Congress (I),109457,41295
+Undi,63,Patteti Ramakrishna Rao,Independent,101521,424
+Undi,63,Venkatareddy Godi,Independent,101521,553
+Undi,63,Atchuta Rama Raju Indukuri,Janata Party,101521,20883
+Undi,63,Yerra Narayana Swamy (Benergi),Indian National Congress,101521,23354
+Undi,63,Gottumukkala Rama Chandraraju,Indian National Congress (I),101521,35560
+Penugonda,64,Allapalli Satyavati,Independent,92932,284
+Penugonda,64,Venkatareddy Kerri,Independent,92932,288
+Penugonda,64,Bavana Narashmham,Republican Party Of India (Khobragade),92932,815
+Penugonda,64,Gopalarao Sonti,Janata Party,92932,9568
+Penugonda,64,Vanka Satyanarayana,Communist Party Of India,92932,26549
+Penugonda,64,Jakkamsetti Venkateswararao,Indian National Congress (I),92932,33971
+Tanuku,65,Induduri Venkata Somaraju,Independent,99787,253
+Tanuku,65,Gorella Pedda Gopalamu,Independent,99787,419
+Tanuku,65,Mallina Seshagirirao,Independent,99787,479
+Tanuku,65,Seeni Ramarao,Janata Party,99787,20250
+Tanuku,65,Gannamani Satyanarayana Murty,Indian National Congress,99787,21331
+Tanuku,65,Kantioydu Appa Rao,Indian National Congress (I),99787,35393
+Attili,66,Gudimetla Varahala Reddi,Janata Party,103978,23037
+Attili,66,Vegesba Kanka Durgavenkata Satyanarayana Raju,Indian National Congress,103978,23637
+Attili,66,Indukuri Ramakrishanam Raju,Indian National Congress (I),103978,32541
+Tadepalligudem,67,Jalapari Apparao,Independent,110260,639
+Tadepalligudem,67,Gaaneswararao Chatamcherla,Janata Party,110260,11353
+Tadepalligudem,67,Eli Anjaneyulu,Indian National Congress,110260,31455
+Tadepalligudem,67,Chintalapati Seeta Rama Chandra Vara Prasada Murty Raju,Indian National Congress (I),110260,39128
+Ungutur,68,Badarvada Brahma Siva Achyutha Narayana Raju,Independent,108725,292
+Ungutur,68,Edupalli Peddi Raju,Independent,108725,426
+Ungutur,68,Sreeramulu Ganjit,Independent,108725,790
+Ungutur,68,Nageswara Rao Vase,Republican Party Of India (Khobragade),108725,1060
+Ungutur,68,Sanjeeva Damondra Rao Marada,Independent,108725,1111
+Ungutur,68,Yelisetti Surya Prakasa Rao,Independent,108725,2058
+Ungutur,68,Sunkavalli Venkata Durga Prasada Rao,Indian National Congress,108725,8234
+Ungutur,68,Maganti Bhupati Rao,Janata Party,108725,25175
+Ungutur,68,Kadiyala Satyanarayana,Indian National Congress (I),108725,41547
+Dendulur,69,Mulpuri Pascaly,Independent,89587,430
+Dendulur,69,Raajaani Tamminaidu,Independent,89587,1378
+Dendulur,69,Samuel Pediveti,Indian National Congress,89587,2762
+Dendulur,69,Garapati Krishnamurthy,Janata Party,89587,28965
+Dendulur,69,Neelam Charles,Indian National Congress (I),89587,36865
+Eluru,70,Banda Suryanarayana,Independent,106306,352
+Eluru,70,Venkata Satyanarayana Puli,Independent,106306,476
+Eluru,70,Nerella Raja,Independent,106306,5242
+Eluru,70,Appalaswamy Pudi,Communist Party Of India,106306,11874
+Eluru,70,Amanaganti Sreeramulu,Janata Party,106306,24113
+Eluru,70,Surya Prakasa Rao Nalabati,Indian National Congress (I),106306,34825
+Gopalpuram,71,Dasari Dorka,Independent,98585,716
+Gopalpuram,71,B.Pamulayya,Independent,98585,916
+Gopalpuram,71,Cholla Chittaranjan,Independent,98585,1066
+Gopalpuram,71,Mallelli Subba Rao,Independent,98585,1081
+Gopalpuram,71,T.V.Raghuvulu,Indian National Congress,98585,9739
+Gopalpuram,71,Sati Venkatrao,Janata Party,98585,17746
+Gopalpuram,71,Desari Sarojini Devi,Indian National Congress (I),98585,39225
+Kovvur,72,Rama Somayajulu Kalluri,Independent,106459,311
+Kovvur,72,Peethala Tatayya,Independent,106459,700
+Kovvur,72,Immamuri Rangayakulu,Independent,106459,750
+Kovvur,72,Krishna Rao Mullapudi,Indian National Congress,106459,9783
+Kovvur,72,Alluri Sarvarayudu Choudary,Janata Party,106459,35428
+Kovvur,72,Munshi Abdul Aziz,Indian National Congress (I),106459,37046
+Polavaram,73,Krushnamurty Punem,Independent,87136,570
+Polavaram,73,Kondamodalu Ramireddi,Independent,87136,2866
+Polavaram,73,Punem Singanna Dora,Indian National Congress,87136,8758
+Polavaram,73,Modiyam Lakshmana Rao,Janata Party,87136,11115
+Polavaram,73,Nagabhushanam Rasaputra,Indian National Congress (I),87136,35514
+Chintalapudi,74,Chatrathi Surya Prakasa Rao,Independent,95141,1293
+Chintalapudi,74,Manne John Samuel Sadhu,Independent,95141,1521
+Chintalapudi,74,Kotagiri Venugopala Rao,Indian National Congress,95141,18130
+Chintalapudi,74,Mandalapu Satyanarayana,Janata Party,95141,26490
+Chintalapudi,74,Gadde Venkateswara Rao,Indian National Congress (I),95141,31746
+Jaggayyapet,75,Alasapuri Ramakrishna,Independent,90467,776
+Jaggayyapet,75,Kosuru Ramakrishna,Independent,90467,1445
+Jaggayyapet,75,Rajyalakshmanmma Vasireddi,Indian National Congress,90467,15802
+Jaggayyapet,75,Komaragiri Krishna Mohan Rao,Janata Party,90467,22498
+Jaggayyapet,75,Ramarao Bodduluru,Indian National Congress (I),90467,30209
+Nandigama,76,Abusumalli Suryanarayana Rao,Indian National Congress,95396,20564
+Nandigama,76,Gude Madhusudhana Rao,Indian National Congress (I),95396,24493
+Nandigama,76,Mukkapati Venkateswara Rao,Janata Party,95396,31771
+Vijayawada West,77,Madala Venkata Subbarao,Independent,118309,306
+Vijayawada West,77,P.Radha Krishna Murthy,Independent,118309,1043
+Vijayawada West,77,Asif Pasha,Indian National Congress,118309,4966
+Vijayawada West,77,Tammina Potharaju,Communist Party Of India,118309,18826
+Vijayawada West,77,Mohammed Imthizuddin,Janata Party,118309,29198
+Vijayawada West,77,Pothina Chinna,Indian National Congress (I),118309,33587
+Vijayawada East,78,Seerapu Appa Rao,Independent,98227,79
+Vijayawada East,78,Radhakrishna Sarma Gudipudi,Independent,98227,160
+Vijayawada East,78,Goparaju Vijayam,Independent,98227,378
+Vijayawada East,78,Venkateswara Rao Venigalla,Independent,98227,447
+Vijayawada East,78,Jandhyala Shankar,Indian National Congress,98227,9339
+Vijayawada East,78,Bayana Appa Rao,Janata Party,98227,26925
+Vijayawada East,78,Nadendla Bhaskar Rao,Indian National Congress (I),98227,30039
+Kankipadu,79,Aliginent Sreera Madutha,Independent,104674,305
+Kankipadu,79,Kotta Venkateswararao,Independent,104674,445
+Kankipadu,79,Chakka Venkatesubbarao,Independent,104674,555
+Kankipadu,79,Akkineni Bhaskara Rao,Indian National Congress,104674,8354
+Kankipadu,79,Tummala Chowdary,Janata Party,104674,29061
+Kankipadu,79,Koneru Ranga Rao,Indian National Congress (I),104674,38815
+Mylavaram,80,Nuthakki Jaya Rao,Independent,94056,769
+Mylavaram,80,Kopparti John Sudarsanam,Indian National Congress (I),94056,22054
+Mylavaram,80,Anandabai T.E.S.,Janata Party,94056,23518
+Mylavaram,80,Chanamolu Venkata Rao,Indian National Congress,94056,28838
+Tiruvuru,81,Nallapu Aseervadam,Independent,92331,578
+Tiruvuru,81,Palakurti Arjaneyulu,Independent,92331,753
+Tiruvuru,81,Bhimla Sanjevi,Independent,92331,1514
+Tiruvuru,81,Kota Ramayya,Indian National Congress,92331,16860
+Tiruvuru,81,Kota Punnaiah,Janata Party,92331,24773
+Tiruvuru,81,Vakkalagadda Adamu,Indian National Congress (I),92331,30057
+Nuzvid,82,Vela Marti Sikhamani,Independent,98660,481
+Nuzvid,82,Ganta Subhakar,Independent,98660,652
+Nuzvid,82,M.V.S.V.K.Appa Rao,Indian National Congress,98660,17851
+Nuzvid,82,Kolli Varaprasada Rao,Janata Party,98660,21336
+Nuzvid,82,Paladag Venkata Rao,Indian National Congress (I),98660,40524
+Gannavaram,83,Uppuleti Prasada Rao,Indian National Congress (I),86734,18128
+Gannavaram,83,Lanka Venkateswara Rao (Chinni),Indian National Congress,86734,18472
+Gannavaram,83,Puchalapalli Sindarayya,Communist Party Of India (Marxist),86734,35984
+Vuyyur,84,Kakani Ramamohana Rao,Indian National Congress (I),85693,31527
+Vuyyur,84,Vadde Sohanadreeswara Rao,Janata Party,85693,38598
+Gudivada,85,Ravuri Arjunarao,Independent,105881,400
+Gudivada,85,Seetaranarai Chandrala,Independent,105881,437
+Gudivada,85,"Rajabapaiah, Koganti",Indian National Congress,105881,6016
+Gudivada,85,Puttagunta Venkata Subbarao,Communist Party Of India (Marxist),105881,32236
+Gudivada,85,Katari Satyanarayanarao,Indian National Congress (I),105881,38060
+Mudinepalli,86,Chaparala Purnachandra Rao,Independent,93111,237
+Mudinepalli,86,Veeramachaneni Butchaiab,Independent,93111,429
+Mudinepalli,86,Kunathi Venkataswamy,Indian National Congress (I),93111,14530
+Mudinepalli,86,Kaza Ramanatham,Janata Party,93111,25777
+Mudinepalli,86,Pinnamaneni Koteswara Rao,Indian National Congress,93111,37609
+Kaikalur,87,Krishna Murthy Yirrinki,Independent,90510,113
+Kaikalur,87,Kothapalli Venkatraju,Independent,90510,136
+Kaikalur,87,Andugala Jeremiah,Independent,90510,398
+Kaikalur,87,Aseevadam Garikimukku,Republican Party Of India,90510,500
+Kaikalur,87,Abraham Domathoti,Independent,90510,1537
+Kaikalur,87,Mangatayaramma Kamili,Indian National Congress,90510,3183
+Kaikalur,87,Arepalli Srihari Rao,Janata Party,90510,17232
+Kaikalur,87,Sudabathula Nageswara Rao,Indian National Congress (I),90510,24623
+Kaikalur,87,Kanumuru Bapiraju,Independent,90510,24669
+Malleswaram,88,Pinnenti Pamideswara Rao,Indian National Congress,94048,10108
+Malleswaram,88,Mangayya Ankem,Independent,94048,12115
+Malleswaram,88,Yella Balaramamurthy,Indian National Congress (I),94048,24690
+Malleswaram,88,Buragadda Niranjana Rao,Janata Party,94048,27912
+Bandar,89,Vidyudvalli Sastry Puranam,Independent,103099,85
+Bandar,89,Chirivella Raghava Rao,Republican Party Of India (Khobragade),103099,733
+Bandar,89,Kuppa Venkaterama Sastry,Independent,103099,1714
+Bandar,89,Pedasingu Lakshmana Rao,Indian National Congress,103099,13748
+Bandar,89,Chillamkurti Veeraswamy Alias Ambulu,Indian National Congress (I),103099,28498
+Bandar,89,Vaddi Ranga Rao,Janata Party,103099,30400
+Nidumolu,90,"Ananda Rao, Done",Independent,98325,772
+Nidumolu,90,Kanumuri Someswara Rao,Indian National Congress,98325,14249
+Nidumolu,90,Kalapala Nancharayya,Indian National Congress (I),98325,19970
+Nidumolu,90,Guturu Bapanayya,Communist Party Of India (Marxist),98325,39806
+Avanigadda,91,Chidambara Rao Sanaka,Independent,84846,247
+Avanigadda,91,Maddala Lourdu Mary,Independent,84846,646
+Avanigadda,91,Sali Dharmayya,Independent,84846,1006
+Avanigadda,91,Chalapati Rao Sanaka,Indian National Congress (I),84846,7063
+Avanigadda,91,Saikam Arjuna Rao,Janata Party,84846,29909
+Avanigadda,91,Mandali Venkata Krishna Rao,Indian National Congress,84846,30396
+Kuchinapudi,92,John Kommeria,Independent,87044,876
+Kuchinapudi,92,Anangani Bhagwanta Rao,Indian National Congress,87044,9851
+Kuchinapudi,92,Mandali Subrahmanyam,Indian National Congress (I),87044,25523
+Kuchinapudi,92,Evuru Subba Rao,Janata Party,87044,30791
+Repalle,93,Rachnabathuni Srigiri Murthy,Independent,85888,261
+Repalle,93,Nuthalapati Raja Rao,Independent,85888,327
+Repalle,93,Ravararapu Sitharamaiah,Independent,85888,332
+Repalle,93,Badugu Bhaktavatsalam,Independent,85888,1645
+Repalle,93,Basavapunnaiah Singam,Indian National Congress,85888,14059
+Repalle,93,Yadam Channaiah,Indian National Congress (I),85888,22846
+Repalle,93,Koratala Satyanarayana,Communist Party Of India (Marxist),85888,26319
+Vemur,94,Sadhu Choppara,Independent,105050,486
+Vemur,94,Karmooru Kotireddy,Independent,105050,645
+Vemur,94,Sambasivarao Paladugu,Indian National Congress,105050,10800
+Vemur,94,Veeraiah Kodali,Janata Party,105050,34118
+Vemur,94,Yadalapati Venkatrao,Indian National Congress (I),105050,34624
+Duggirala,95,Pasupuleti Krishna Murthy,Independent,99398,1664
+Duggirala,95,Kongara Jaggaiah,Indian National Congress,99398,10593
+Duggirala,95,Gudibandi Nagi Reddy,Communist Party Of India (Marxist),99398,30773
+Duggirala,95,G.Vedantha Rao,Indian National Congress (I),99398,31843
+Tenali,96,Amirineni Veera Raghavalah,Independent,96111,387
+Tenali,96,Venkatravu Nannapaneni,Indian National Congress (I),96111,37358
+Tenali,96,Indira Doddapaneni,Janata Party,96111,39368
+Ponnur,97,Anjanyulu Meda,Independent,100592,364
+Ponnur,97,Doradla Satyanarayana,Independent,100592,481
+Ponnur,97,Doppalapudi Jacob Sastry,Independent,100592,814
+Ponnur,97,Yepuri Eswara Sangameswara Rao,Independent,100592,4550
+Ponnur,97,Hanumantha Rao Desari,Indian National Congress,100592,4901
+Ponnur,97,Kolla Venkaiah,Independent,100592,6461
+Ponnur,97,Talasila Venkataramalah,Janata Party,100592,22614
+Ponnur,97,Nageswara Rao Gogineni,Indian National Congress (I),100592,30066
+Bapatla,98,Johnson Modukuri,Indian National Congress,111272,5423
+Bapatla,98,Muppalaneni Seshagiri Rao,Janata Party,111272,40143
+Bapatla,98,Kona Prabhakara Rao,Indian National Congress (I),111272,40332
+Prathipad,99,Bheemajah Pallapothu,Independent,97584,405
+Prathipad,99,Manoharamu Koppula,Independent,97584,483
+Prathipad,99,Subba Ram Vattikuti,Independent,97584,858
+Prathipad,99,Thirupathiah Mallam,Independent,97584,2400
+Prathipad,99,Apparao G.V.,Indian National Congress,97584,12762
+Prathipad,99,Sadasivarao K.,Janata Party,97584,26703
+Prathipad,99,Lakshinarayana Reddy Karumuru,Indian National Congress (I),97584,27961
+Guntur-I,100,Jonnalagadda Joshi,Independent,111383,61
+Guntur-I,100,Vijya Ramanujam,Independent,111383,68
+Guntur-I,100,Lakkavarapu Adilakshmi,Independent,111383,101
+Guntur-I,100,Mandru Joseph Vara Prasad,Independent,111383,175
+Guntur-I,100,Nazeer Sheik,Independent,111383,178
+Guntur-I,100,Guddeti Krishna,Independent,111383,185
+Guntur-I,100,Gudivada Jayaramu,Independent,111383,420
+Guntur-I,100,Mohammad Hussain,Indian National Congress,111383,3215
+Guntur-I,100,Kanaparthi Nagayya,Communist Party Of India,111383,9342

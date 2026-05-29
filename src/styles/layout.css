@@ -295,6 +295,53 @@
   padding: 0.75rem 1rem;
 }
 
+.sandbox-dataset-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.65rem 1rem;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.sandbox-dataset-banner strong {
+  color: var(--success);
+  font-family: var(--font-mono);
+}
+
+.sandbox-dataset-banner span {
+  color: var(--text-muted);
+}
+
+.sandbox-output-panels {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 0;
+}
+
+.sandbox-panel {
+  padding: 0.75rem 1rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-panel);
+}
+
+.sandbox-panel__title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 0.25rem;
+}
+
+.sandbox-panel__subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 0.65rem;
+}
+
 /* Responsive: stack on smaller screens */
 @media (max-width: 1024px) {
   .sandbox-layout {

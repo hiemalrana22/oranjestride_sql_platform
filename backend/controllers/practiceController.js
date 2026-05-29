@@ -7,8 +7,8 @@
 //   POST /api/practice/run     — run any SELECT query against all datasets
 // ─────────────────────────────────────────────
 
-const { getPracticeDb, TABLE_CATALOG } = require("../utils/practiceDatabase");
-const { validateQuery }               = require("../utils/validateQuery");
+const { getPracticeDb, TABLE_CATALOG, getTablePreview } = require("../utils/practiceDatabase");
+const { validateQuery } = require("../utils/validateQuery");
 
 // ─────────────────────────────────────────────
 // GET /api/practice/tables
@@ -17,6 +17,20 @@ const { validateQuery }               = require("../utils/validateQuery");
 // ─────────────────────────────────────────────
 function getTables(req, res) {
   return res.status(200).json({ tables: TABLE_CATALOG });
+}
+
+// ─────────────────────────────────────────────
+// GET /api/practice/tables/:tableName/preview
+// Returns sample rows for the selected dataset.
+// ─────────────────────────────────────────────
+function previewTable(req, res) {
+  const { tableName } = req.params;
+  try {
+    const preview = getTablePreview(tableName, 10);
+    return res.status(200).json(preview);
+  } catch (err) {
+    return res.status(400).json({ error: err.message });
+  }
 }
 
 // ─────────────────────────────────────────────
@@ -52,8 +66,7 @@ function runPracticeQuery(req, res) {
   let rows;
   try {
     const db = getPracticeDb();
-    // LIMIT output to 200 rows to keep responses snappy
-    rows = db.prepare(query).all().slice(0, 200);
+    rows = db.prepare(query.trim()).all().slice(0, 200);
   } catch (err) {
     return res.status(200).json({
       rows:          [],
@@ -70,4 +83,4 @@ function runPracticeQuery(req, res) {
   });
 }
 
-module.exports = { getTables, runPracticeQuery };
+module.exports = { getTables, previewTable, runPracticeQuery };
