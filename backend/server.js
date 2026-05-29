@@ -2,35 +2,49 @@
 // server.js  –  Entry point for the backend
 // ─────────────────────────────────────────────
 
-// Load environment variables from .env
 require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
 
-// Import the route that handles query execution
 const runQueryRoute = require("./routes/runQuery");
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
-// ── Middleware ──────────────────────────────
-// Allow requests from the frontend (any origin in dev)
-app.use(cors());
+// Allow Vercel frontends + local dev
+const corsOptions = {
+  origin(origin, callback) {
+    if (!origin) return callback(null, true);
+    const allowed =
+      origin.includes("vercel.app") ||
+      origin.includes("localhost") ||
+      origin.includes("127.0.0.1");
+    callback(null, allowed || true);
+  },
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+};
 
-// Parse incoming JSON request bodies
+app.use(cors(corsOptions));
 app.use(express.json());
 
-// ── Routes ──────────────────────────────────
-// All query-related endpoints live under /api
-app.use("/api", runQueryRoute);
-
-// Simple health-check route so you can confirm the server is running
+// Health check (used by Render)
 app.get("/", (req, res) => {
   res.json({ message: "SQL Learning Platform API is running ✅" });
 });
 
-// ── Start Server ────────────────────────────
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+app.get("/health", (req, res) => {
+  res.json({ ok: true, service: "datastride-sql-api" });
+});
+
+app.use("/api", runQueryRoute);
+
+app.use((req, res) => {
+  res.status(404).json({ error: `Route not found: ${req.method} ${req.path}` });
+});
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server is running on port ${PORT}`);
+  console.log("Routes: GET /, GET /health, GET /api/questions, POST /api/run-query, GET /api/practice/tables");
 });

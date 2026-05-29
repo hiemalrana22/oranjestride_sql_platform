@@ -41,12 +41,9 @@ function PracticePage({ activePage, onPageChange }) {
         }
         setQuestions(list);
         setActiveQuestionId(list[0].id);
-      } catch {
+      } catch (err) {
         if (!cancelled) {
-          setLoadError(
-            'Could not load questions. Check that the API is running at ' +
-              (import.meta.env.VITE_API_URL || 'https://datastride-sql-platform.onrender.com')
-          );
+          setLoadError(err.message || 'Could not load questions.');
         }
       } finally {
         if (!cancelled) setIsLoading(false);
@@ -73,9 +70,9 @@ function PracticePage({ activePage, onPageChange }) {
         setSql(detail.starterSql || '');
         setHasRun(false);
         setResponse(null);
-      } catch {
+      } catch (err) {
         if (!cancelled) {
-          setLoadError(`Could not load question ${activeQuestionId}.`);
+          setLoadError(err.message || `Could not load question ${activeQuestionId}.`);
         }
       }
     }
@@ -155,7 +152,7 @@ function PracticePage({ activePage, onPageChange }) {
 
   return (
     <div className="app-shell">
-      <Navbar />
+      <Navbar activePage={activePage} onPageChange={onPageChange} />
       <Loader visible={isRunning} />
 
       <div className="practice-layout">

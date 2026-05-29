@@ -18,6 +18,7 @@ import Loader     from '../components/Loader';
  */
 function SandboxPage({ activePage, onPageChange }) {
   const [tables, setTables]           = useState([]);
+  const [tablesError, setTablesError] = useState(null);
   const [expandedTable, setExpanded]  = useState(null);   // which table is open in the browser
   const [sql, setSql]                 = useState('-- Write any SELECT query below\nSELECT * FROM book1 LIMIT 10;');
   const [isRunning, setIsRunning]     = useState(false);
@@ -27,8 +28,14 @@ function SandboxPage({ activePage, onPageChange }) {
   // Load table catalog once on mount
   useEffect(() => {
     fetchPracticeTables()
-      .then(setTables)
-      .catch(() => setTables([]));
+      .then((data) => {
+        setTables(data);
+        setTablesError(null);
+      })
+      .catch((err) => {
+        setTables([]);
+        setTablesError(err.message || 'Could not load tables from API.');
+      });
   }, []);
 
   // ── Run the user's query ────────────────
@@ -86,6 +93,12 @@ function SandboxPage({ activePage, onPageChange }) {
         {/* ── Left: Table Browser ───────────── */}
         <aside className="sandbox-sidebar">
           <div className="sandbox-sidebar__header">Available Tables</div>
+
+          {tablesError && (
+            <div className="alert alert--error" style={{ margin: '0.75rem' }} role="alert">
+              {tablesError}
+            </div>
+          )}
 
           {Object.entries(byDay).map(([day, dayTables]) => (
             <div key={day} className="sandbox-day-group">
