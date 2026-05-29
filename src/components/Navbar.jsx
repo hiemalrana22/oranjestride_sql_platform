@@ -1,6 +1,6 @@
 /**
  * Top navigation bar — includes tab switching between
- * the guided "Learn" mode and the free "Sandbox" mode.
+ * the guided "Learn" mode and the free "SQL Practice" mode.
  */
 function Navbar({ activePage, onPageChange }) {
   return (
@@ -28,7 +28,7 @@ function Navbar({ activePage, onPageChange }) {
           className={`navbar__tab ${activePage === 'sandbox' ? 'navbar__tab--active' : ''}`}
           onClick={() => onPageChange('sandbox')}
         >
-          🧪 Sandbox
+          🧪 SQL Practice
         </button>
       </nav>
     </header>

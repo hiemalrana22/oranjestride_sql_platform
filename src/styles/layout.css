@@ -185,6 +185,57 @@
 
 .sandbox-table-name {
   flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sandbox-table-rows {
+  font-size: 10px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.sandbox-table-actions {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem 0.5rem 1.75rem;
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+}
+
+.sandbox-join-list {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+.sandbox-join-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.35rem 0;
+  font-size: 11px;
+  color: var(--accent);
+  line-height: 1.35;
+}
+
+.sandbox-join-btn:hover {
+  text-decoration: underline;
+}
+
+.sandbox-executed-query {
+  margin: 0;
+  padding: 0.35rem 1rem;
+  font-size: 11px;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+}
+
+.sandbox-executed-query code {
+  color: var(--text);
 }
 
 .sandbox-table-chevron {

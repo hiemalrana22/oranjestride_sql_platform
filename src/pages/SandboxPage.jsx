@@ -1,23 +1,64 @@
-import { useState, useEffect } from 'react';
-import { fetchPracticeTables, runPracticeQuery } from '../services/api';
+import { useState, useEffect, useCallback } from 'react';
+import { fetchPracticeTables, runPracticeQuery, fetchTablePreview } from '../services/api';
 import Navbar from '../components/Navbar';
 import SqlEditor from '../components/SqlEditor';
 import OutputTable from '../components/OutputTable';
 import Loader from '../components/Loader';
 
-const STARTER_SQL = `-- All datasets are loaded in one database.
--- Single table:
+const STARTER_SQL = `-- All 8 datasets share one database — use JOINs freely.
+-- Run the last SELECT in the editor (comments are OK).
+
 SELECT * FROM book1 LIMIT 10;
 
--- JOIN across tables:
--- SELECT b1.Party_Name, b2.Campaign_Spending
--- FROM book1 b1
--- JOIN book2 b2 ON b1.Party_Name = b2.Party_Name
--- LIMIT 10;
+-- Multi-table example (Day 9 election data):
+-- SELECT ci.constituency_id, ci.constituency, ci.state,
+--        er.candidate, er.party, er.total_votes, er.margin
+-- FROM constituency_info ci
+-- INNER JOIN election_result er ON ci.constituency_id = er.constituency_id
+-- LIMIT 20;
 `;
 
+const JOIN_HINTS = [
+  {
+    day: 8,
+    label: 'book1 ↔ book2',
+    sql: `SELECT b1.Party_Name, b1.Contact_Name, b2.Campaign_Spending
+FROM book1 b1
+INNER JOIN book2 b2 ON b1.Party_Name = b2.Party_Name;`,
+  },
+  {
+    day: 9,
+    label: 'constituency_info ↔ election_result',
+    sql: `SELECT ci.constituency_id, ci.constituency, ci.state,
+       er.candidate, er.party, er.total_votes, er.margin
+FROM constituency_info ci
+INNER JOIN election_result er ON ci.constituency_id = er.constituency_id
+LIMIT 25;`,
+  },
+  {
+    day: 9,
+    label: 'election_result ↔ indian_state_level_election',
+    sql: `SELECT er.constituency_id, er.candidate, er.party,
+       ise.st_name, ise.year, ise.ac_name
+FROM election_result er
+INNER JOIN indian_state_level_election ise
+  ON er.constituency_id = ise.ac_no AND er.constituency = ise.ac_name
+LIMIT 25;`,
+  },
+  {
+    day: 10,
+    label: 'district_policy ↔ scheme_budget',
+    sql: `SELECT d.district_name, d.state_code, d.year, d.health_index,
+       s.scheme_name, s.allocated_budget_cr, s.utilized_budget_cr
+FROM district_policy_outcomes d
+INNER JOIN scheme_budget_utilization s
+  ON d.state_code = s.state_code AND d.year = s.year
+LIMIT 25;`,
+  },
+];
+
 /**
- * Sandbox — all tables stay loaded; write any SELECT (JOINs, etc.).
+ * SQL Practice — all tables loaded; run any SELECT, JOIN, CTE, or subquery.
  */
 function SandboxPage({ activePage, onPageChange }) {
   const [tables, setTables] = useState([]);
@@ -29,16 +70,17 @@ function SandboxPage({ activePage, onPageChange }) {
   const [isRunning, setIsRunning] = useState(false);
   const [result, setResult] = useState(null);
   const [hasRun, setHasRun] = useState(false);
+  const [previewLoading, setPreviewLoading] = useState(false);
 
-  // Load table list once — database already has all tables on the server
   useEffect(() => {
     fetchPracticeTables()
       .then((data) => {
-        setTables(data.tables || data);
+        const list = data.tables || data;
+        setTables(list);
         setDbMessage(data.message || '');
         setTablesError(null);
-        if ((data.tables || data).length > 0) {
-          setSelectedTable((data.tables || data)[0].tableName);
+        if (list.length > 0) {
+          setSelectedTable(list[0].tableName);
         }
       })
       .catch((err) => {
@@ -47,10 +89,39 @@ function SandboxPage({ activePage, onPageChange }) {
       });
   }, []);
 
-  // Click table = show schema only (do not overwrite user's query)
   const handleTableClick = (tableName) => {
     setSelectedTable(tableName);
     setExpandedTable((prev) => (prev === tableName ? null : tableName));
+  };
+
+  const insertTableQuery = useCallback((tableName, limit = 15) => {
+    const snippet = `SELECT * FROM ${tableName} LIMIT ${limit};`;
+    setSql((prev) => (prev.trim() ? `${prev.trim()}\n\n${snippet}` : snippet));
+  }, []);
+
+  const handlePreviewTable = async (tableName) => {
+    setPreviewLoading(true);
+    setHasRun(true);
+    setResult(null);
+    try {
+      const data = await fetchTablePreview(tableName, 15);
+      setResult({
+        rows: data.rows,
+        rowCount: data.rowCount,
+        executionTime: 'preview',
+        error: null,
+        executedQuery: `SELECT * FROM ${tableName} LIMIT 15`,
+      });
+    } catch (err) {
+      setResult({
+        rows: [],
+        rowCount: 0,
+        executionTime: '0ms',
+        error: err.message,
+      });
+    } finally {
+      setPreviewLoading(false);
+    }
   };
 
   const handleRun = async () => {
@@ -79,6 +150,12 @@ function SandboxPage({ activePage, onPageChange }) {
     setResult(null);
   };
 
+  const loadJoinExample = (exampleSql) => {
+    setSql(exampleSql);
+    setHasRun(false);
+    setResult(null);
+  };
+
   const byDay = tables.reduce((acc, t) => {
     const key = `Day ${t.day}`;
     if (!acc[key]) acc[key] = [];
@@ -86,10 +163,12 @@ function SandboxPage({ activePage, onPageChange }) {
     return acc;
   }, {});
 
+  const busy = isRunning || previewLoading;
+
   return (
     <div className="app-shell">
       <Navbar activePage={activePage} onPageChange={onPageChange} />
-      <Loader visible={isRunning} />
+      <Loader visible={busy} />
 
       <div className="sandbox-layout">
         <aside className="sandbox-sidebar">
@@ -123,17 +202,37 @@ function SandboxPage({ activePage, onPageChange }) {
                     >
                       <span className="sandbox-table-icon">⊞</span>
                       <span className="sandbox-table-name">{table.tableName}</span>
+                      <span className="sandbox-table-rows">{table.rowCount} rows</span>
                       <span className="sandbox-table-chevron">{isOpen ? '▾' : '▸'}</span>
                     </button>
                     {isOpen && (
-                      <ul className="sandbox-columns">
-                        {table.columns.map((col) => (
-                          <li key={col.name} className="sandbox-column">
-                            <span className="sandbox-column__name">{col.name}</span>
-                            <span className="sandbox-column__type">{col.type}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <>
+                        <ul className="sandbox-columns">
+                          {table.columns.map((col) => (
+                            <li key={col.name} className="sandbox-column">
+                              <span className="sandbox-column__name">{col.name}</span>
+                              <span className="sandbox-column__type">{col.type}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="sandbox-table-actions">
+                          <button
+                            type="button"
+                            className="btn btn--ghost btn--xs"
+                            onClick={() => insertTableQuery(table.tableName)}
+                          >
+                            Add query
+                          </button>
+                          <button
+                            type="button"
+                            className="btn btn--ghost btn--xs"
+                            onClick={() => handlePreviewTable(table.tableName)}
+                            disabled={busy}
+                          >
+                            Preview
+                          </button>
+                        </div>
+                      </>
                     )}
                   </div>
                 );
@@ -142,10 +241,24 @@ function SandboxPage({ activePage, onPageChange }) {
           ))}
 
           <div className="sandbox-hint">
-            <div className="sandbox-hint__title">Multi-table SQL</div>
+            <div className="sandbox-hint__title">Example JOINs</div>
             <div className="sandbox-hint__text">
-              All tables are loaded together. Use <code>JOIN</code>, subqueries, or multiple tables in one query.
+              Click to load a working multi-table query:
             </div>
+            <ul className="sandbox-join-list">
+              {JOIN_HINTS.map((hint) => (
+                <li key={hint.label}>
+                  <button
+                    type="button"
+                    className="sandbox-join-btn"
+                    onClick={() => loadJoinExample(hint.sql)}
+                    title={hint.sql}
+                  >
+                    Day {hint.day}: {hint.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
         </aside>
 
@@ -156,7 +269,7 @@ function SandboxPage({ activePage, onPageChange }) {
               onChange={setSql}
               onRun={handleRun}
               onReset={handleReset}
-              isRunning={isRunning}
+              isRunning={busy}
             />
           </div>
 
@@ -179,9 +292,17 @@ function SandboxPage({ activePage, onPageChange }) {
             {!hasRun && (
               <div className="sandbox-statusbar">
                 <span className="sandbox-statusbar__idle">
-                  Run any <code>SELECT</code> query — single table or JOIN.
+                  Run any <code>SELECT</code> or <code>WITH</code> — single table, JOINs, subqueries, aggregates.
                 </span>
               </div>
+            )}
+
+            {hasRun && result?.executedQuery && !result?.error && (
+              <p className="sandbox-executed-query" title="Statement that was run">
+                Executed: <code>{result.executedQuery.length > 120
+                  ? `${result.executedQuery.slice(0, 120)}…`
+                  : result.executedQuery}</code>
+              </p>
             )}
 
             <div className="sandbox-table-wrap">

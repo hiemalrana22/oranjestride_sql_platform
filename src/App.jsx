@@ -8,7 +8,7 @@ import SandboxPage  from './pages/SandboxPage';
  * The active page is passed down to Navbar for tab highlighting.
  */
 function App() {
-  const [activePage, setActivePage] = useState('learn');
+  const [activePage, setActivePage] = useState('sandbox');
 
   return activePage === 'learn'
     ? <PracticePage activePage={activePage} onPageChange={setActivePage} />

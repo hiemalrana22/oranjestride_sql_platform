@@ -9,6 +9,7 @@
 
 const { getPracticeDb, getTableCatalog, getPracticeStatus } = require("../utils/practiceDatabase");
 const { validateQuery } = require("../utils/validateQuery");
+const { prepareSqlForExecution } = require("../utils/sqlQueryPrep");
 
 // ─────────────────────────────────────────────
 // GET /api/practice/tables
@@ -55,11 +56,20 @@ function runPracticeQuery(req, res) {
     });
   }
 
+  const executable = prepareSqlForExecution(query);
+  if (!executable) {
+    return res.status(400).json({
+      rows:          [],
+      executionTime: `${Date.now() - startTime}ms`,
+      error:         "No executable SQL found. Write a SELECT or WITH query.",
+    });
+  }
+
   // ── 3. Execute against the practice DB ───
   let rows;
   try {
     const db = getPracticeDb();
-    rows = db.prepare(query.trim()).all().slice(0, 200);
+    rows = db.prepare(executable).all().slice(0, 500);
   } catch (err) {
     return res.status(200).json({
       rows:          [],
@@ -71,9 +81,37 @@ function runPracticeQuery(req, res) {
   return res.status(200).json({
     rows,
     rowCount:      rows.length,
+    executedQuery: executable,
     executionTime: `${Date.now() - startTime}ms`,
     error:         null,
   });
 }
 
-module.exports = { getTables, runPracticeQuery };
+// ─────────────────────────────────────────────
+// GET /api/practice/preview/:tableName?limit=10
+// Returns sample rows for a table (schema exploration).
+// ─────────────────────────────────────────────
+function previewTable(req, res) {
+  const tableName = String(req.params.tableName || "").trim();
+  const limit = Math.min(Math.max(Number(req.query.limit) || 10, 1), 50);
+
+  if (!tableName || !/^[a-zA-Z_][a-zA-Z0-9_]*$/.test(tableName)) {
+    return res.status(400).json({ error: "Invalid table name." });
+  }
+
+  const catalog = getTableCatalog();
+  const known = catalog.some((t) => t.tableName === tableName);
+  if (!known) {
+    return res.status(404).json({ error: `Table "${tableName}" not found.` });
+  }
+
+  try {
+    const db = getPracticeDb();
+    const rows = db.prepare(`SELECT * FROM "${tableName}" LIMIT ?`).all(limit);
+    return res.status(200).json({ tableName, rows, rowCount: rows.length });
+  } catch (err) {
+    return res.status(500).json({ error: err.message });
+  }
+}
+
+module.exports = { getTables, runPracticeQuery, previewTable };

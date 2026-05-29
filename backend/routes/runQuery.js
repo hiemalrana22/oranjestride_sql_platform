@@ -6,7 +6,7 @@
 const express      = require("express");
 const router       = express.Router();
 const { runQuery, listQuestions, getQuestion } = require("../controllers/queryController");
-const { getTables, runPracticeQuery } = require("../controllers/practiceController");
+const { getTables, runPracticeQuery, previewTable } = require("../controllers/practiceController");
 
 /**
  * GET /api/questions
@@ -40,5 +40,11 @@ router.get("/practice/tables", getTables);
  * Runs any SELECT query against the shared practice database.
  */
 router.post("/practice/run", runPracticeQuery);
+
+/**
+ * GET /api/practice/preview/:tableName
+ * Sample rows for exploring a dataset table.
+ */
+router.get("/practice/preview/:tableName", previewTable);
 
 module.exports = router;

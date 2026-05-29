@@ -85,3 +85,8 @@
   color: var(--text-bright);
   background: var(--bg-hover);
 }
+
+.btn--xs {
+  padding: 0.2rem 0.45rem;
+  font-size: 11px;
+}

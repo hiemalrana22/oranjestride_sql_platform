@@ -1,4 +1,4 @@
-constituency_id,constituency,candidate,party,total_votes,margin
+constituency,constituency_id,candidate,party,total_votes,margin
 Ichapuram,1,Manabala Ramarao,Independent,83247,813
 Ichapuram,1,Appadu Sahu,Independent,83247,1743
 Ichapuram,1,Uppada Rangababu,Indian National Congress,83247,4427

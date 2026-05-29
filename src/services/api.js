@@ -91,4 +91,18 @@ export async function runPracticeQuery(sql) {
   return data;
 }
 
+/**
+ * Fetch sample rows for a practice table.
+ */
+export async function fetchTablePreview(tableName, limit = 10) {
+  try {
+    const { data } = await api.get(`/api/practice/preview/${tableName}`, {
+      params: { limit },
+    });
+    return data;
+  } catch (err) {
+    throw new Error(formatApiError(err, `Could not preview table ${tableName}`));
+  }
+}
+
 export default api;

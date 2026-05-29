@@ -32,14 +32,21 @@ const BLOCKED_KEYWORDS = [
  *
  * @param {string} query  The SQL string submitted by the user
  */
+const { prepareSqlForExecution } = require("./sqlQueryPrep");
+
 function validateQuery(query) {
   // Reject empty input
   if (!query || query.trim() === "") {
     return { valid: false, error: "Query cannot be empty." };
   }
 
+  const prepared = prepareSqlForExecution(query);
+  if (!prepared) {
+    return { valid: false, error: "No executable SQL found. Write a SELECT or WITH query." };
+  }
+
   // Work with uppercase so keyword checks are case-insensitive
-  const upperQuery = query.trim().toUpperCase();
+  const upperQuery = prepared.toUpperCase();
 
   // ── Block dangerous keywords ──────────────
   for (const keyword of BLOCKED_KEYWORDS) {

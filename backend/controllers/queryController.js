@@ -9,6 +9,7 @@ const path = require("path");
 const fs   = require("fs");
 
 const { validateQuery } = require("../utils/validateQuery");
+const { prepareSqlForExecution } = require("../utils/sqlQueryPrep");
 const { runTestCase }   = require("../utils/runTestCase");
 const { formatQuestionForDisplay } = require("../utils/parseQuestionForDisplay");
 
@@ -129,8 +130,20 @@ function runQuery(req, res) {
   let lastResult  = [];
   let firstError  = null;
 
+  const executable = prepareSqlForExecution(query);
+  if (!executable) {
+    return res.status(400).json({
+      passed:        false,
+      passedTests:   0,
+      totalTests,
+      executionTime: `${Date.now() - startTime}ms`,
+      result:        [],
+      error:         "No executable SQL found. Write a SELECT or WITH query.",
+    });
+  }
+
   for (const testCase of testCases) {
-    const outcome = runTestCase(testCase, query);
+    const outcome = runTestCase(testCase, executable);
 
     lastResult = outcome.result;
 
