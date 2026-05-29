@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Production API on Render — override with VITE_API_URL on Vercel
 const API_BASE_URL =
-  import.meta.env.VITE_API_URL || 'https://oranjestride-sql-platform.onrender.com';
+  import.meta.env.VITE_API_URL || 'https://datastride-sql-platform.onrender.com';
 
 const api = axios.create({
   baseURL: API_BASE_URL,

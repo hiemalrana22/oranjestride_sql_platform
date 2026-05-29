@@ -45,7 +45,7 @@ function PracticePage() {
         if (!cancelled) {
           setLoadError(
             'Could not load questions. Check that the API is running at ' +
-              (import.meta.env.VITE_API_URL || 'https://oranjestride-sql-platform.onrender.com')
+              (import.meta.env.VITE_API_URL || 'https://datastride-sql-platform.onrender.com')
           );
         }
       } finally {

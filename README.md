@@ -49,13 +49,13 @@ Or deploy via `render.yaml` at the repo root.
 
 ### Connect frontend (Vercel)
 
-The app calls `https://oranjestride-sql-platform.onrender.com` by default.
+The app calls `https://datastride-sql-platform.onrender.com` by default.
 
 On Vercel → **Settings** → **Environment Variables**, optionally set:
 
 | Key | Value |
 |-----|--------|
-| `VITE_API_URL` | `https://oranjestride-sql-platform.onrender.com` |
+| `VITE_API_URL` | `https://datastride-sql-platform.onrender.com` |
 
 Redeploy after adding the variable.
 
