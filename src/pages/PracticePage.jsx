@@ -14,7 +14,7 @@ import Loader from '../components/Loader';
 /**
  * Main practice page — loads questions from Render API.
  */
-function PracticePage() {
+function PracticePage({ activePage, onPageChange }) {
   const [questions, setQuestions] = useState([]);
   const [activeQuestion, setActiveQuestion] = useState(null);
   const [activeQuestionId, setActiveQuestionId] = useState(null);
@@ -133,7 +133,7 @@ function PracticePage() {
   if (isLoading) {
     return (
       <div className="app-shell">
-        <Navbar />
+        <Navbar activePage={activePage} onPageChange={onPageChange} />
         <Loader visible />
         <p style={{ textAlign: 'center', padding: '2rem', color: '#858585' }}>
           Loading questions…
@@ -145,7 +145,7 @@ function PracticePage() {
   if (loadError) {
     return (
       <div className="app-shell">
-        <Navbar />
+        <Navbar activePage={activePage} onPageChange={onPageChange} />
         <div className="alert alert--error" style={{ margin: '2rem' }} role="alert">
           {loadError}
         </div>

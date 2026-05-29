@@ -1,7 +1,8 @@
 /**
- * Top navigation bar for the SQL learning platform.
+ * Top navigation bar — includes tab switching between
+ * the guided "Learn" mode and the free "Sandbox" mode.
  */
-function Navbar() {
+function Navbar({ activePage, onPageChange }) {
   return (
     <header className="navbar">
       <div className="navbar__brand">
@@ -13,8 +14,22 @@ function Navbar() {
           <div className="navbar__subtitle">Practice · Learn · Master</div>
         </div>
       </div>
-      <nav className="navbar__actions" aria-label="Platform links">
-        <span>Practice</span>
+
+      <nav className="navbar__tabs" aria-label="Platform sections">
+        <button
+          type="button"
+          className={`navbar__tab ${activePage === 'learn' ? 'navbar__tab--active' : ''}`}
+          onClick={() => onPageChange('learn')}
+        >
+          📚 Learn
+        </button>
+        <button
+          type="button"
+          className={`navbar__tab ${activePage === 'sandbox' ? 'navbar__tab--active' : ''}`}
+          onClick={() => onPageChange('sandbox')}
+        >
+          🧪 Sandbox
+        </button>
       </nav>
     </header>
   );

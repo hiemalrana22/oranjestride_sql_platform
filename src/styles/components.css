@@ -46,6 +46,32 @@
   color: var(--text-muted);
 }
 
+/* Navbar tab switcher */
+.navbar__tabs {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.navbar__tab {
+  padding: 0.4rem 1rem;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
+}
+
+.navbar__tab:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.navbar__tab--active {
+  background: rgba(0, 122, 204, 0.18);
+  color: var(--accent);
+  font-weight: 600;
+}
+
 /* Question sidebar */
 .question-sidebar {
   display: flex;

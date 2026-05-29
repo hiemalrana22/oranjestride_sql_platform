@@ -1,11 +1,18 @@
+import { useState } from 'react';
 import PracticePage from './pages/PracticePage';
+import SandboxPage  from './pages/SandboxPage';
 
 /**
- * Root app — single practice route for now.
- * Add React Router here when you add more pages.
+ * Root app — switches between the guided Learn page
+ * and the free-form Sandbox page.
+ * The active page is passed down to Navbar for tab highlighting.
  */
 function App() {
-  return <PracticePage />;
+  const [activePage, setActivePage] = useState('learn');
+
+  return activePage === 'learn'
+    ? <PracticePage activePage={activePage} onPageChange={setActivePage} />
+    : <SandboxPage  activePage={activePage} onPageChange={setActivePage} />;
 }
 
 export default App;

@@ -45,4 +45,20 @@ export async function runQuery(questionId, sql) {
   return data;
 }
 
+/**
+ * Fetch all available tables for the practice sandbox.
+ */
+export async function fetchPracticeTables() {
+  const { data } = await api.get('/api/practice/tables');
+  return data.tables;
+}
+
+/**
+ * Run a free-form SELECT query against the practice database.
+ */
+export async function runPracticeQuery(sql) {
+  const { data } = await api.post('/api/practice/run', { query: sql });
+  return data;
+}
+
 export default api;

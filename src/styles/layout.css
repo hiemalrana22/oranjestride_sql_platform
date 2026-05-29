@@ -97,3 +97,221 @@
     border-bottom: 1px solid var(--border);
   }
 }
+
+/* ── Sandbox (free-practice) layout ─────────────── */
+
+.sandbox-layout {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Left: table browser */
+.sandbox-sidebar {
+  width: 240px;
+  min-width: 200px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  background: var(--bg-panel);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sandbox-sidebar__header {
+  padding: 0.85rem 1rem;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.sandbox-day-group {
+  border-bottom: 1px solid var(--border);
+}
+
+.sandbox-day-label {
+  padding: 0.5rem 1rem 0.3rem;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.sandbox-table-entry {
+  /* individual table entry wrapper */
+}
+
+.sandbox-table-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  color: var(--text);
+  font-size: 13px;
+  font-family: var(--font-mono);
+  transition: background var(--transition);
+}
+
+.sandbox-table-btn:hover {
+  background: var(--bg-hover);
+}
+
+.sandbox-table-btn--active {
+  background: rgba(0, 122, 204, 0.12);
+  color: var(--accent);
+}
+
+.sandbox-table-icon {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.sandbox-table-name {
+  flex: 1;
+}
+
+.sandbox-table-chevron {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.sandbox-columns {
+  list-style: none;
+  padding: 0 0 0.5rem 1.75rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
+.sandbox-column {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem 0.25rem 0;
+  font-size: 12px;
+  font-family: var(--font-mono);
+}
+
+.sandbox-column__name {
+  color: var(--text);
+}
+
+.sandbox-column__type {
+  color: var(--warning);
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+/* Tips box at bottom of sidebar */
+.sandbox-hint {
+  margin-top: auto;
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
+.sandbox-hint__title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.sandbox-hint__text {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.sandbox-hint__text code {
+  color: var(--accent);
+  font-size: 11px;
+}
+
+/* Right: editor + output */
+.sandbox-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--bg-app);
+}
+
+.sandbox-editor {
+  flex: 1;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+}
+
+.sandbox-output {
+  flex: 1;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-panel);
+}
+
+/* Status bar above the results */
+.sandbox-statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 1rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+  background: var(--bg-elevated);
+}
+
+.sandbox-statusbar__ok {
+  color: var(--success);
+}
+
+.sandbox-statusbar__error {
+  color: var(--danger);
+}
+
+.sandbox-statusbar__idle {
+  color: var(--text-muted);
+}
+
+.sandbox-statusbar__time {
+  color: var(--text-muted);
+}
+
+.sandbox-table-wrap {
+  flex: 1;
+  overflow: auto;
+  padding: 0.75rem 1rem;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 1024px) {
+  .sandbox-layout {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .sandbox-sidebar {
+    width: 100%;
+    min-width: unset;
+    max-height: 35vh;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    overflow-y: auto;
+  }
+
+  .sandbox-main {
+    min-height: 60vh;
+  }
+}
